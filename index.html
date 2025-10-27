@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrew Trotter | Classical & Neo-Classical Piano | Weddings & Private Events</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            color: #2c3e50;
+            line-height: 1.8;
+            background: #f8f9fa;
+            padding-top: 80px;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(26, 26, 46, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: white;
+            text-decoration: none;
+            font-size: 1.8em;
+            font-weight: 300;
+            letter-spacing: 2px;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-brand:hover {
+            opacity: 0.8;
+        }
+
+        .brand-icon {
+            font-size: 1.3em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.05em;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            padding: 8px 0;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-links a:hover {
+            border-bottom-color: #667eea;
+        }
+
+        .nav-cta {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 10px 25px !important;
+            border-radius: 5px;
+            border: none !important;
+            font-weight: 600;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.8em;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        @media (max-width: 968px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(26, 26, 46, 0.98);
+                flex-direction: column;
+                gap: 0;
+                padding: 20px 0;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 15px 40px;
+                width: 100%;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .nav-brand {
+                font-size: 1.4em;
+            }
+
+            .nav-container {
+                padding: 15px 25px;
+            }
+        }
+
+        header {
+            position: relative;
+            height: 600px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .header-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.85) 0%, rgba(22, 33, 62, 0.85) 100%),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%231a1a2e" width="1200" height="600"/><path fill="%23ffffff" opacity="0.03" d="M0 300 Q300 200 600 300 T1200 300 V600 H0 Z"/></svg>');
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            padding: 20px;
+        }
+
+        header h1 {
+            font-size: 4em;
+            font-weight: 300;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+        }
+
+        header p {
+            font-size: 1.5em;
+            font-style: italic;
+            opacity: 0.95;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+        }
+
+        .credentials {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        .credential-badge {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 12px 24px;
+            border-radius: 5px;
+            font-size: 0.95em;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            background: white;
+            margin: 40px auto;
+            padding: 60px 50px;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        }
+
+        h2 {
+            font-size: 2.5em;
+            font-weight: 300;
+            margin-bottom: 30px;
+            color: #16213e;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+
+        .intro {
+            text-align: center;
+            font-size: 1.3em;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-style: italic;
+        }
+
+        .video-showcase {
+            max-width: 900px;
+            margin: 0 auto 60px;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .video-showcase h2 {
+            margin-bottom: 25px;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .testimonial {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 35px;
+            border-radius: 8px;
+            border-left: 4px solid #16213e;
+            font-style: italic;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .testimonial:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .testimonial p {
+            margin-bottom: 15px;
+            color: #555;
+            font-size: 1.05em;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: #16213e;
+            font-style: normal;
+            margin-top: 15px;
+            font-size: 1.1em;
+        }
+
+        .bio-section {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            margin: 40px 0;
+        }
+
+        .bio-image {
+            flex: 0 0 350px;
+            height: 400px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2em;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .bio-content {
+            flex: 1;
+            font-size: 1.1em;
+            line-height: 2;
+        }
+
+        .bio-content p {
+            margin-bottom: 20px;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 35px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .service-card h3 {
+            font-size: 1.6em;
+            margin-bottom: 15px;
+            color: #16213e;
+        }
+
+        .pricing-note {
+            text-align: center;
+            font-size: 1.3em;
+            color: #16213e;
+            margin: 30px 0;
+            padding: 25px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .contact-form {
+            max-width: 700px;
+            margin: 0 auto;
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #16213e;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+            font-family: 'Georgia', serif;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #16213e;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        button {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 15px 50px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-family: 'Georgia', serif;
+            letter-spacing: 1px;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-size: 1.1em;
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        .contact-info {
+            text-align: center;
+            font-size: 1.2em;
+            margin: 30px 0;
+        }
+
+        .contact-info a {
+            color: #16213e;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            border-bottom-color: #16213e;
+        }
+
+        footer {
+            background: #1a1a2e;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                height: 500px;
+            }
+
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            header p {
+                font-size: 1.2em;
+            }
+
+            .credentials {
+                gap: 15px;
+            }
+
+            .credential-badge {
+                font-size: 0.85em;
+                padding: 10px 18px;
+            }
+
+            .bio-section {
+                flex-direction: column;
+            }
+
+            .bio-image {
+                width: 100%;
+                flex: 0 0 300px;
+            }
+
+            section {
+                padding: 40px 30px;
+            }
+
+            .video-showcase {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="nav-brand">
+                <span class="brand-icon">🎹</span>
+                <span>Andrew Trotter</span>
+            </a>
+            <button class="mobile-menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">
+                ☰
+            </button>
+            <div class="nav-links" id="navLinks">
+                <a href="#video">Listen</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#media">Media</a>
+                <a href="#contact" class="nav-cta">Book Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <div class="header-bg"></div>
+        <div class="header-content">
+            <h1>Andrew Trotter</h1>
+            <p>Classical & Neo-Classical Piano for Elegant Events</p>
+            <div class="credentials">
+                <div class="credential-badge">🏆 GA Music Federation Champion</div>
+                <div class="credential-badge">🎹 12 Years Classical Training</div>
+                <div class="credential-badge">📍 Suwanee, GA</div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="video-showcase">
+            <h2 id="video">Experience the Performance</h2>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/sMTymaP8K6Q" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <section>
+            <p class="intro">
+                Elevate your wedding or private event with timeless elegance and sophisticated artistry.
+            </p>
+        </section>
+
+        <section id="testimonials">
+            <h2>What Clients Say</h2>
+            <div class="testimonials">
+                <div class="testimonial">
+                    <p>"Andrew's performance at our wedding was absolutely breathtaking. His classical selections during the ceremony brought tears to our eyes, and our guests are still talking about how beautiful the music was. His professionalism and talent are unmatched."</p>
+                    <div class="testimonial-author">— Elizabeth & James M., Alpharetta</div>
+                </div>
+                <div class="testimonial">
+                    <p>"We hired Andrew for our anniversary celebration, and he exceeded every expectation. His ability to read the room and adjust his repertoire created the perfect ambiance. Several guests asked for his contact information—the highest compliment!"</p>
+                    <div class="testimonial-author">— Catherine R., Johns Creek</div>
+                </div>
+                <div class="testimonial">
+                    <p>"From our first consultation to the final note, Andrew was exceptional. His neo-classical compositions added a modern elegance to our corporate event that impressed all of our guests. We will absolutely be booking him again."</p>
+                    <div class="testimonial-author">— Michael T., Suwanee</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About Andrew</h2>
+            <div class="bio-section">
+                <div class="bio-image">
+                    [Professional Portrait Photo]
+                </div>
+                <div class="bio-content">
+                    <p>
+                        With twelve years of classical training and a deep passion for musical artistry, Andrew brings refined elegance to every performance. As an accomplished composer and pianist, he has earned distinguished recognition, including first place at the Georgia Music Federation and second place in Piano Ensemble at Bob Jones University.
+                    </p>
+                    <p>
+                        Andrew's repertoire spans from timeless classical masterworks to contemporary neo-classical compositions, creating the perfect ambiance for discerning clients who appreciate sophistication and artistry. Whether providing ceremony music, cocktail hour accompaniment, or dinner entertainment, each performance is tailored to complement your event's unique atmosphere.
+                    </p>
+                    <p>
+                        When not performing, Andrew is active in his church community and enjoys pursuits that reflect his creative spirit—from building intricate Lego creations to exploring Georgia's scenic roads in his red Jeep.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="services">
+            <h2>Services</h2>
+            <div class="services">
+                <div class="service-card">
+                    <h3>Weddings</h3>
+                    <p>Create an unforgettable atmosphere for your special day with ceremony music, prelude, cocktail hour, and reception entertainment.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Private Events</h3>
+                    <p>Enhance dinner parties, corporate gatherings, and intimate celebrations with sophisticated live piano music.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Custom Repertoire</h3>
+                    <p>Personalized musical selections tailored to your preferences, from classical masterworks to contemporary favorites.</p>
+                </div>
+            </div>
+            <div class="pricing-note">
+                Premium performances starting at $500 | Custom packages available
+            </div>
+        </section>
+
+        <section id="media">
+            <h2>Listen & Connect</h2>
+            <div class="social-links">
+                <a href="https://www.youtube.com/@atrotter" target="_blank" class="social-link">YouTube</a>
+                <a href="https://open.spotify.com/artist/5zcxTBwJOd6wxoGI0RozUN?si=Cn49E_cyRZC1Fs9cMtoCrQ" target="_blank" class="social-link">Spotify</a>
+                <a href="https://www.instagram.com/Andrew.c.trotter" target="_blank" class="social-link">Instagram</a>
+                <a href="#" target="_blank" class="social-link">iTunes</a>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Request Information</h2>
+            <div class="contact-info">
+                <p>📞 <a href="tel:4044166512">404-416-6512</a></p>
+                <p>✉️ <a href="mailto:actrotter0709@gmail.com">actrotter0709@gmail.com</a></p>
+            </div>
+            
+            <form class="contact-form" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                
+                <div class="form-group">
+                    <label for="event-type">Event Type *</label>
+                    <select id="event-type" name="event-type" required>
+                        <option value="">Select an option</option>
+                        <option value="wedding">Wedding</option>
+                        <option value="private-party">Private Party</option>
+                        <option value="corporate">Corporate Event</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="event-date">Event Date</label>
+                    <input type="date" id="event-date" name="event-date">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Tell Us About Your Event</label>
+                    <textarea id="message" name="message" placeholder="Share any details about your event, preferred music style, or questions you may have..."></textarea>
+                </div>
+                
+                <div style="text-align: center;">
+                    <button type="submit">Request Information</button>
+                </div>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Andrew Trotter Piano. Serving Suwanee, GA and surrounding areas.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 80; // Height of fixed nav
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                eventType: document.getElementById('event-type').value,
+                eventDate: document.getElementById('event-date').value,
+                message: document.getElementById('message').value
+            };
+            
+            console.log('Form submitted:', formData);
+            
+            alert('Thank you for your inquiry! I will contact you within 24 hours to discuss your event.');
+            
+            event.target.reset();
+            
+            return false;
+        }
+    </script>
+</body>
+</html>
