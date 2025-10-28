@@ -142,13 +142,14 @@
 
         header {
             position: relative;
-            height: 600px;
+            height: 550px;
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             text-align: center;
+            background: #0a0e27;
         }
 
         .header-bg {
@@ -157,8 +158,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(26, 26, 46, 0.85) 0%, rgba(22, 33, 62, 0.85) 100%),
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%231a1a2e" width="1200" height="600"/><path fill="%23ffffff" opacity="0.03" d="M0 300 Q300 200 600 300 T1200 300 V600 H0 Z"/></svg>');
+            background: linear-gradient(135deg, rgba(10, 14, 39, 0.95) 0%, rgba(22, 33, 62, 0.92) 100%),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%230a0e27" width="1200" height="600"/></svg>');
             background-size: cover;
             background-position: center;
             z-index: 1;
@@ -167,43 +168,78 @@
         .header-content {
             position: relative;
             z-index: 2;
-            max-width: 900px;
+            max-width: 800px;
             padding: 20px;
         }
 
         header h1 {
-            font-size: 4em;
-            font-weight: 300;
-            letter-spacing: 3px;
-            margin-bottom: 15px;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+            font-size: 3.2em;
+            font-weight: 400;
+            letter-spacing: 4px;
+            margin-bottom: 25px;
+            text-shadow: none;
+            text-transform: uppercase;
+            font-family: 'Garamond', 'Georgia', serif;
         }
 
         header p {
-            font-size: 1.5em;
-            font-style: italic;
-            opacity: 0.95;
-            letter-spacing: 1px;
-            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+            font-size: 1.25em;
+            font-style: normal;
+            opacity: 0.9;
+            letter-spacing: 2px;
+            text-shadow: none;
+            margin-bottom: 35px;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        .hero-tagline {
+            display: none;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: transparent;
+            color: white;
+            padding: 14px 40px;
+            font-size: 1em;
+            text-decoration: none;
+            border-radius: 0;
+            font-weight: 400;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            box-shadow: none;
+            margin-top: 15px;
+            border: 2px solid white;
+            text-transform: uppercase;
+        }
+
+        .hero-cta:hover {
+            transform: none;
+            background: white;
+            color: #0a0e27;
+            box-shadow: none;
         }
 
         .credentials {
             display: flex;
             justify-content: center;
-            gap: 40px;
-            margin-top: 25px;
+            gap: 50px;
+            margin-top: 40px;
             flex-wrap: wrap;
         }
 
         .credential-badge {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            padding: 12px 24px;
-            border-radius: 5px;
-            font-size: 0.95em;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: transparent;
+            backdrop-filter: none;
+            padding: 0;
+            border-radius: 0;
+            font-size: 0.9em;
+            font-weight: 400;
+            letter-spacing: 1px;
+            border: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            padding-bottom: 8px;
         }
 
         .container {
@@ -479,15 +515,29 @@
 
         @media (max-width: 768px) {
             header {
-                height: 500px;
+                height: 480px;
             }
 
             header h1 {
-                font-size: 2.5em;
+                font-size: 2.2em;
+                letter-spacing: 3px;
             }
 
             header p {
-                font-size: 1.2em;
+                font-size: 1.05em;
+            }
+
+            .hero-cta {
+                font-size: 0.9em;
+                padding: 12px 30px;
+            }
+
+            .credentials {
+                gap: 25px;
+            }
+
+            .credential-badge {
+                font-size: 0.8em;
             }
 
             .credentials {
@@ -543,11 +593,12 @@
         <div class="header-bg"></div>
         <div class="header-content">
             <h1>Andrew Trotter</h1>
-            <p>Classical & Neo-Classical Piano for Elegant Events</p>
+            <p>Classical Piano for Weddings & Private Events</p>
+            <a href="#contact" class="hero-cta">Inquire About Availability</a>
             <div class="credentials">
-                <div class="credential-badge">🏆 GA Music Federation Champion</div>
-                <div class="credential-badge">🎹 12 Years Classical Training</div>
-                <div class="credential-badge">📍 Suwanee, GA</div>
+                <div class="credential-badge">Georgia Music Federation Champion</div>
+                <div class="credential-badge">Classically Trained</div>
+                <div class="credential-badge">Suwanee, Georgia</div>
             </div>
         </div>
     </header>
@@ -556,7 +607,7 @@
         <div class="video-showcase">
             <h2 id="video">Experience the Performance</h2>
             <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/sMTymaP8K6Q" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/sMTymaP8K6Q?autoplay=1&mute=1&loop=1&playlist=sMTymaP8K6Q" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
 
