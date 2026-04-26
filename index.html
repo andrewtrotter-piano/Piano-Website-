@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andrew Trotter | Classical & Neo-Classical Piano | Weddings & Private Events</title>
+    <title>Andrew Trotter | Composer & Pianist</title>
     <style>
         * {
             margin: 0;
@@ -193,10 +193,6 @@
             line-height: 1.8;
         }
 
-        .hero-tagline {
-            display: none;
-        }
-
         .hero-cta {
             display: inline-block;
             background: transparent;
@@ -274,7 +270,7 @@
             font-style: italic;
         }
 
-        .video-showcase {
+        .hero-player {
             max-width: 900px;
             margin: 0 auto 60px;
             background: white;
@@ -283,60 +279,93 @@
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
 
-        .video-showcase h2 {
+        .hero-player h2 {
             margin-bottom: 25px;
         }
 
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
+        .hero-player p.intro {
+            margin-bottom: 30px;
+        }
+
+        .spotify-embed {
+            border-radius: 12px;
             overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
         }
 
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        .testimonials {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+        .music-categories {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
             margin: 40px 0;
         }
 
-        .testimonial {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            padding: 35px;
-            border-radius: 8px;
-            border-left: 4px solid #16213e;
-            font-style: italic;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .music-category h3 {
+            font-size: 1.8em;
+            font-weight: 400;
+            color: #16213e;
+            margin-bottom: 20px;
+            letter-spacing: 1.5px;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 10px;
         }
 
-        .testimonial:hover {
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .work-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 4px solid #16213e;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .work-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 25px rgba(0,0,0,0.15);
         }
 
-        .testimonial p {
-            margin-bottom: 15px;
-            color: #555;
-            font-size: 1.05em;
+        .work-card h4 {
+            font-size: 1.3em;
+            color: #16213e;
+            margin-bottom: 8px;
+            font-weight: 500;
         }
 
-        .testimonial-author {
-            font-weight: bold;
+        .work-card .work-meta {
+            font-style: italic;
+            color: #666;
+            font-size: 0.95em;
+            margin-bottom: 12px;
+        }
+
+        .work-card p {
+            font-size: 0.98em;
+            color: #444;
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        .work-card .work-link {
+            display: inline-block;
             color: #16213e;
-            font-style: normal;
-            margin-top: 15px;
-            font-size: 1.1em;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95em;
+            border-bottom: 1px solid #16213e;
+            padding-bottom: 2px;
+            align-self: flex-start;
+            transition: opacity 0.3s ease;
+        }
+
+        .work-card .work-link:hover {
+            opacity: 0.7;
         }
 
         .bio-section {
@@ -370,41 +399,58 @@
             margin-bottom: 20px;
         }
 
-        .services {
+        .currently-note {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 20px 25px;
+            border-left: 4px solid #16213e;
+            margin-top: 25px;
+            font-style: italic;
+            color: #444;
+        }
+
+        .currently-note strong {
+            font-style: normal;
+            color: #16213e;
+        }
+
+        .performance-doors {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
             margin: 40px 0;
         }
 
-        .service-card {
+        .door-card {
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            padding: 35px;
+            padding: 40px;
             border-radius: 8px;
-            text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .service-card:hover {
+        .door-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 25px rgba(0,0,0,0.15);
         }
 
-        .service-card h3 {
+        .door-card h3 {
             font-size: 1.6em;
             margin-bottom: 15px;
             color: #16213e;
         }
 
-        .pricing-note {
-            text-align: center;
-            font-size: 1.3em;
+        .door-card p {
+            margin-bottom: 15px;
+            color: #444;
+        }
+
+        .door-card .subject-cue {
+            background: rgba(255,255,255,0.6);
+            padding: 12px 16px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95em;
             color: #16213e;
-            margin: 30px 0;
-            padding: 25px;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            border-radius: 8px;
-            font-weight: 600;
+            margin-top: 15px;
         }
 
         .contact-form {
@@ -537,16 +583,8 @@
             }
 
             .credential-badge {
-                font-size: 0.8em;
-            }
-
-            .credentials {
-                gap: 15px;
-            }
-
-            .credential-badge {
                 font-size: 0.85em;
-                padding: 10px 18px;
+                padding-bottom: 8px;
             }
 
             .bio-section {
@@ -562,8 +600,12 @@
                 padding: 40px 30px;
             }
 
-            .video-showcase {
+            .hero-player {
                 padding: 25px;
+            }
+
+            .work-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -579,12 +621,10 @@
                 ☰
             </button>
             <div class="nav-links" id="navLinks">
-                <a href="#video">Listen</a>
-                <a href="#testimonials">Testimonials</a>
+                <a href="#music">Music</a>
                 <a href="#about">About</a>
-                <a href="#services">Services</a>
-                <a href="#media">Media</a>
-                <a href="#contact" class="nav-cta">Book Now</a>
+                <a href="#performance">Performance</a>
+                <a href="#contact" class="nav-cta">Contact</a>
             </div>
         </div>
     </nav>
@@ -593,8 +633,8 @@
         <div class="header-bg"></div>
         <div class="header-content">
             <h1>Andrew Trotter</h1>
-            <p>Classical Piano for Weddings & Private Events</p>
-            <a href="#contact" class="hero-cta">Inquire About Availability</a>
+            <p>Composer & Pianist</p>
+            <a href="#music" class="hero-cta">Listen</a>
             <div class="credentials">
                 <div class="credential-badge">Georgia Music Federation Champion</div>
                 <div class="credential-badge">Classically Trained</div>
@@ -604,141 +644,226 @@
     </header>
 
     <div class="container">
-        <div class="video-showcase">
-            <h2 id="video">Experience the Performance</h2>
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/sMTymaP8K6Q?autoplay=1&mute=1&loop=1&playlist=sMTymaP8K6Q" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="hero-player">
+            <h2>Piano, Vol. 1</h2>
+            <p class="intro">A solo piano collection — start here.</p>
+            <div class="spotify-embed">
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/5zcxTBwJOd6wxoGI0RozUN?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             </div>
         </div>
 
-        <section>
-            <p class="intro">
-                Elevate your wedding or private event with timeless elegance and sophisticated artistry.
-            </p>
-        </section>
+        <section id="music">
+            <h2>Music</h2>
+            <p class="intro">A catalog spanning orchestral, chamber, and solo piano work.</p>
 
-        <section id="testimonials">
-            <h2>What Clients Say</h2>
-            <div class="testimonials">
-                <div class="testimonial">
-                    <p>"Andrew's performance at our wedding was absolutely breathtaking. His classical selections during the ceremony brought tears to our eyes, and our guests are still talking about how beautiful the music was. His professionalism and talent are unmatched."</p>
-                    <div class="testimonial-author">— Elizabeth & James M., Alpharetta</div>
+            <div class="music-categories">
+
+                <div class="music-category">
+                    <h3>Symphony</h3>
+                    <div class="work-grid">
+                        <div class="work-card">
+                            <h4>Symphony No. 1 "Messiah"</h4>
+                            <div class="work-meta">Symphonic, for orchestra · Op. 3 · Three movements</div>
+                            <p>A symphony in three movements written from a place of faith.</p>
+                            <a class="work-link" href="https://open.spotify.com/artist/5zcxTBwJOd6wxoGI0RozUN" target="_blank" rel="noopener">Listen on Spotify →</a>
+                        </div>
+                        <div class="work-card">
+                            <h4>Tempesta dell'Anima</h4>
+                            <div class="work-meta">Symphonic poem, for orchestra · Op. 2 · Five movements</div>
+                            <p>A five-movement symphonic poem tracing the storm of the soul.</p>
+                            <a class="work-link" href="https://open.spotify.com/artist/5zcxTBwJOd6wxoGI0RozUN" target="_blank" rel="noopener">Listen on Spotify →</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="testimonial">
-                    <p>"We hired Andrew for our anniversary celebration, and he exceeded every expectation. His ability to read the room and adjust his repertoire created the perfect ambiance. Several guests asked for his contact information—the highest compliment!"</p>
-                    <div class="testimonial-author">— Catherine R., Johns Creek</div>
+
+                <div class="music-category">
+                    <h3>Ballet</h3>
+                    <div class="work-grid">
+                        <div class="work-card">
+                            <h4>The Silver Swan</h4>
+                            <div class="work-meta">Ballet, for orchestra · Op. 6 · Four acts</div>
+                            <p>A four-act ballet score in twenty-two movements.</p>
+                            <a class="work-link" href="https://open.spotify.com/artist/5zcxTBwJOd6wxoGI0RozUN" target="_blank" rel="noopener">Listen on Spotify →</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="testimonial">
-                    <p>"From our first consultation to the final note, Andrew was exceptional. His neo-classical compositions added a modern elegance to our corporate event that impressed all of our guests. We will absolutely be booking him again."</p>
-                    <div class="testimonial-author">— Michael T., Suwanee</div>
+
+                <div class="music-category">
+                    <h3>Sacred</h3>
+                    <div class="work-grid">
+                        <div class="work-card">
+                            <h4>All For My Lord</h4>
+                            <div class="work-meta">Sacred, for orchestra</div>
+                            <p>A sacred orchestral collection.</p>
+                            <a class="work-link" href="https://open.spotify.com/artist/5zcxTBwJOd6wxoGI0RozUN" target="_blank" rel="noopener">Listen on Spotify →</a>
+                        </div>
+                    </div>
                 </div>
+
+                <div class="music-category">
+                    <h3>Solo Piano</h3>
+                    <div class="work-grid">
+                        <div class="work-card">
+                            <h4>Piano, Vol. 1</h4>
+                            <div class="work-meta">Solo piano</div>
+                            <p>A collection of solo piano works — the front door to the catalog.</p>
+                            <a class="work-link" href="https://open.spotify.com/artist/5zcxTBwJOd6wxoGI0RozUN" target="_blank" rel="noopener">Listen on Spotify →</a>
+                        </div>
+                        <div class="work-card">
+                            <h4>Lullaby</h4>
+                            <div class="work-meta">Solo piano · Single</div>
+                            <p>A quiet solo piano single.</p>
+                            <a class="work-link" href="https://open.spotify.com/artist/5zcxTBwJOd6wxoGI0RozUN" target="_blank" rel="noopener">Listen on Spotify →</a>
+                        </div>
+                        <div class="work-card">
+                            <h4>I love you more</h4>
+                            <div class="work-meta">Solo piano · Single</div>
+                            <p>A solo piano single.</p>
+                            <a class="work-link" href="https://open.spotify.com/artist/5zcxTBwJOd6wxoGI0RozUN" target="_blank" rel="noopener">Listen on Spotify →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="music-category">
+                    <h3>Cinematic & Chamber</h3>
+                    <div class="work-grid">
+                        <div class="work-card">
+                            <h4>Presenze Silenziose</h4>
+                            <div class="work-meta">Cinematic, for solo piano and cello</div>
+                            <p>A cinematic chamber work for solo piano and cello.</p>
+                            <a class="work-link" href="https://open.spotify.com/artist/5zcxTBwJOd6wxoGI0RozUN" target="_blank" rel="noopener">Listen on Spotify →</a>
+                        </div>
+                        <div class="work-card">
+                            <h4>Spring Dance</h4>
+                            <div class="work-meta">Chamber, for piano and string quartet</div>
+                            <p>A chamber work for piano and string quartet.</p>
+                            <a class="work-link" href="https://open.spotify.com/artist/5zcxTBwJOd6wxoGI0RozUN" target="_blank" rel="noopener">Listen on Spotify →</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="social-links">
+                <a href="https://open.spotify.com/artist/5zcxTBwJOd6wxoGI0RozUN?si=Cn49E_cyRZC1Fs9cMtoCrQ" target="_blank" class="social-link">Spotify</a>
+                <a href="https://music.apple.com/us/artist/andrew-trotter/1741896515" target="_blank" class="social-link">Apple Music</a>
+                <a href="https://www.youtube.com/@atrotter" target="_blank" class="social-link">YouTube</a>
+                <a href="https://www.instagram.com/Andrew.c.trotter" target="_blank" class="social-link">Instagram</a>
             </div>
         </section>
 
         <section id="about">
-            <h2>About Andrew</h2>
+            <h2>About</h2>
             <div class="bio-section">
                 <div class="bio-image">
                     <img src="andrew-portrait.jpg" alt="Andrew Trotter at piano" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
                 </div>
                 <div class="bio-content">
                     <p>
-                        With twelve years of classical training and a deep passion for musical artistry, Andrew brings refined elegance to every performance. As an accomplished composer and pianist, he has earned distinguished recognition, including first place at the Georgia Music Federation and second place in Piano Ensemble at Bob Jones University.
+                        <strong>Andrew Trotter</strong> is a composer and pianist from Georgia. At seventeen, his catalog spans orchestral, chamber, and solo piano work — including the symphonic poem <em>Tempesta dell'Anima</em>, the four-act ballet <em>The Silver Swan</em>, and the sacred orchestral collection <em>All For My Lord</em>.
                     </p>
                     <p>
-                        Andrew's repertoire spans from timeless classical masterworks to contemporary neo-classical compositions, creating the perfect ambiance for discerning clients who appreciate sophistication and artistry. Whether providing ceremony music, cocktail hour accompaniment, or dinner entertainment, each performance is tailored to complement your event's unique atmosphere.
+                        Twelve years of classical piano training ground his composing. He has earned first place at the Georgia Music Federation and second place in Piano Ensemble at Bob Jones University.
                     </p>
                     <p>
-                        When not performing, Andrew is active in his church community and enjoys pursuits that reflect his creative spirit—from building intricate Lego creations to exploring Georgia's scenic roads in his red Jeep.
+                        Andrew writes from a place of faith, and performs across the Atlanta area for sacred services, recitals, and private events.
                     </p>
+                    <div class="currently-note">
+                        <strong>Currently:</strong> finishing high school and preparing for conservatory auditions.
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="services">
-            <h2>Services</h2>
-            <div class="services">
-                <div class="service-card">
-                    <h3>Weddings</h3>
-                    <p>Create an unforgettable atmosphere for your special day with ceremony music, prelude, cocktail hour, and reception entertainment.</p>
+        <section id="performance">
+            <h2>Performance</h2>
+            <p class="intro">Live piano for sacred services, recitals, and private events.</p>
+            <div class="performance-doors">
+                <div class="door-card">
+                    <h3>Sacred Services</h3>
+                    <p>Prelude, offertory, and service music for churches across the Atlanta area. Classical and sacred repertoire, original compositions on request.</p>
                 </div>
-                <div class="service-card">
+                <div class="door-card">
                     <h3>Private Events</h3>
-                    <p>Enhance dinner parties, corporate gatherings, and intimate celebrations with sophisticated live piano music.</p>
+                    <p>Weddings, dinners, and intimate gatherings. Ceremony, cocktail hour, and reception music tailored to the occasion.</p>
                 </div>
-                <div class="service-card">
-                    <h3>Custom Repertoire</h3>
-                    <p>Personalized musical selections tailored to your preferences, from classical masterworks to contemporary favorites.</p>
+                <div class="door-card">
+                    <h3>Recitals & Collaborations</h3>
+                    <p>Solo and collaborative recital work, including chamber projects and accompaniment.</p>
                 </div>
-            </div>
-            <div class="pricing-note">
-                Premium performances starting at $500 | Custom packages available
-            </div>
-        </section>
-
-        <section id="media">
-            <h2>Listen & Connect</h2>
-            <div class="social-links">
-                <a href="https://www.youtube.com/@atrotter" target="_blank" class="social-link">YouTube</a>
-                <a href="https://open.spotify.com/artist/5zcxTBwJOd6wxoGI0RozUN?si=Cn49E_cyRZC1Fs9cMtoCrQ" target="_blank" class="social-link">Spotify</a>
-                <a href="https://www.instagram.com/Andrew.c.trotter" target="_blank" class="social-link">Instagram</a>
-                <a href="https://music.apple.com/us/artist/andrew-trotter/1741896515" target="_blank" class="social-link">Apple Music</a>
             </div>
         </section>
 
         <section id="contact">
-            <h2>Request Information</h2>
+            <h2>Contact</h2>
+            <p class="intro">One inbox, two doors. Use a subject line so I can route quickly.</p>
+
+            <div class="performance-doors">
+                <div class="door-card">
+                    <h3>Sync & Licensing</h3>
+                    <p>Film, television, game, and trailer placements. Catalog spans orchestral, chamber, and solo piano — registered and ready to license.</p>
+                    <div class="subject-cue">Subject: Sync inquiry — [project name]</div>
+                </div>
+                <div class="door-card">
+                    <h3>Performance Booking</h3>
+                    <p>Sacred services, weddings, recitals, private events. Use the form below or email directly.</p>
+                    <div class="subject-cue">Subject: Booking inquiry — [event date]</div>
+                </div>
+            </div>
+
             <div class="contact-info">
                 <p>📞 <a href="tel:4044166512">404-416-6512</a></p>
                 <p>✉️ <a href="mailto:actrotter0709@gmail.com">actrotter0709@gmail.com</a></p>
             </div>
-            
+
             <form class="contact-form" onsubmit="handleSubmit(event)">
                 <div class="form-group">
                     <label for="name">Name *</label>
                     <input type="text" id="name" name="name" required>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="email">Email Address *</label>
                     <input type="email" id="email" name="email" required>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="phone">Phone Number</label>
                     <input type="tel" id="phone" name="phone">
                 </div>
-                
+
                 <div class="form-group">
-                    <label for="event-type">Event Type *</label>
+                    <label for="event-type">Inquiry Type *</label>
                     <select id="event-type" name="event-type" required>
                         <option value="">Select an option</option>
+                        <option value="sync">Sync / Licensing</option>
+                        <option value="sacred">Sacred Service</option>
                         <option value="wedding">Wedding</option>
-                        <option value="private-party">Private Party</option>
-                        <option value="corporate">Corporate Event</option>
+                        <option value="private-party">Private Event</option>
+                        <option value="recital">Recital / Collaboration</option>
                         <option value="other">Other</option>
                     </select>
                 </div>
-                
+
                 <div class="form-group">
-                    <label for="event-date">Event Date</label>
+                    <label for="event-date">Event Date (if applicable)</label>
                     <input type="date" id="event-date" name="event-date">
                 </div>
-                
+
                 <div class="form-group">
-                    <label for="message">Tell Us About Your Event</label>
-                    <textarea id="message" name="message" placeholder="Share any details about your event, preferred music style, or questions you may have..."></textarea>
+                    <label for="message">Tell me about your project or event</label>
+                    <textarea id="message" name="message" placeholder="Project details, music style, questions — anything that helps me respond well."></textarea>
                 </div>
-                
+
                 <div style="text-align: center;">
-                    <button type="submit">Request Information</button>
+                    <button type="submit">Send Inquiry</button>
                 </div>
             </form>
         </section>
     </div>
 
     <footer>
-        <p>&copy; 2025 Andrew Trotter Piano. Serving Suwanee, GA and surrounding areas.</p>
+        <p>&copy; 2026 Andrew Trotter. Composer & Pianist · Suwanee, GA.</p>
     </footer>
 
     <!-- EmailJS SDK -->
@@ -781,14 +906,14 @@
 
         function handleSubmit(event) {
             event.preventDefault();
-            
+
             const submitButton = event.target.querySelector('button[type="submit"]');
             const originalButtonText = submitButton.textContent;
-            
+
             // Disable button and show loading state
             submitButton.disabled = true;
             submitButton.textContent = 'Sending...';
-            
+
             // Prepare form data for EmailJS
             const templateParams = {
                 name: document.getElementById('name').value,
@@ -798,22 +923,22 @@
                 event_date: document.getElementById('event-date').value || 'Not specified',
                 message: document.getElementById('message').value || 'No additional message'
             };
-            
+
             // Send email using EmailJS
             emailjs.send('service_h3jsxfu', 'template_sw7t1uc', templateParams)
                 .then(function(response) {
                     console.log('SUCCESS!', response.status, response.text);
-                    alert('Thank you for your inquiry! I will contact you within 24 hours to discuss your event.');
+                    alert('Thank you for your inquiry! I will be in touch soon.');
                     event.target.reset();
                     submitButton.disabled = false;
                     submitButton.textContent = originalButtonText;
                 }, function(error) {
                     console.error('FAILED...', error);
-                    alert('Oops! There was an error sending your message. Please email me directly at actrotter0709@gmail.com or call 404-416-6512.');
+                    alert('There was an error sending your message. Please email me directly at actrotter0709@gmail.com or call 404-416-6512.');
                     submitButton.disabled = false;
                     submitButton.textContent = originalButtonText;
                 });
-            
+
             return false;
         }
     </script>
