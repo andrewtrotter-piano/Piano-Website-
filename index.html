@@ -482,6 +482,18 @@
     letter-spacing: 0.12em;
   }
   footer a { color: var(--cream); }
+  footer .footer-links {
+    margin-top: 14px;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  footer .footer-links a { color: var(--cream-deep); opacity: 0.78; }
+  footer .footer-links a:hover { opacity: 1; }
 
   @media (max-width: 700px) {
     .nav-links { gap: 20px; }
@@ -682,6 +694,9 @@
 
 <footer>
   <div>© 2026 Andrew Trotter — Composer &amp; Pianist. Suwanee, Georgia.</div>
+  <div class="footer-links">
+    <a href="press.html">Press</a>
+  </div>
 </footer>
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
