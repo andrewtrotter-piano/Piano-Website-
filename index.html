@@ -159,6 +159,100 @@
     line-height: 1.15;
   }
 
+  /* ---------- New release: Ricordi ---------- */
+  .release-block {
+    padding: 120px 32px;
+    background: var(--cream);
+  }
+  .release-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 72px;
+    align-items: center;
+  }
+  .release-cover img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 22px 54px rgba(31,29,26,0.24);
+  }
+  .release-copy h2 {
+    font-size: clamp(52px, 7vw, 80px);
+    font-style: italic;
+    line-height: 1.02;
+    margin-bottom: 12px;
+  }
+  .release-meta {
+    font-size: 13px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-bottom: 28px;
+  }
+  .release-copy p {
+    color: var(--ink-soft);
+    font-size: 18px;
+    margin-bottom: 32px;
+    max-width: 520px;
+  }
+  .tracklist {
+    list-style: none;
+    counter-reset: track;
+    border-top: 1px solid var(--rule);
+    margin-bottom: 40px;
+  }
+  .tracklist li {
+    counter-increment: track;
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+    padding: 11px 0;
+    border-bottom: 1px dotted var(--rule);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 21px;
+    color: var(--ink);
+  }
+  .tracklist li::before {
+    content: counter(track, decimal-leading-zero);
+    font-family: 'Lora', serif;
+    font-style: normal;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    color: var(--accent);
+    min-width: 24px;
+  }
+  .release-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .release-actions a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 14px 34px;
+    font-size: 14px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    border: 1px solid var(--ink);
+    transition: all .25s ease;
+  }
+  .release-actions .btn-solid { background: var(--ink); color: var(--cream); }
+  .release-actions .btn-solid:hover { background: var(--accent-deep); border-color: var(--accent-deep); color: var(--cream); }
+  .release-actions .btn-line { color: var(--ink); }
+  .release-actions .btn-line:hover { background: var(--ink); color: var(--cream); }
+  @media (max-width: 800px) {
+    .release-block { padding: 88px 24px; }
+    .release-grid { grid-template-columns: 1fr; gap: 44px; }
+    .release-cover { max-width: 440px; width: 100%; margin: 0 auto; }
+    .release-actions a { flex: 1 1 100%; }
+  }
+
   /* ---------- Listen / Spotify embed ---------- */
   .listen-block {
     background: var(--paper);
@@ -521,13 +615,40 @@
   <div class="hero-inner">
     <h1>Andrew Trotter</h1>
     <div class="role">Composer &amp; Pianist</div>
-    <a href="#listen" class="cta">Listen</a>
+    <a href="#ricordi" class="cta">Hear Ricordi</a>
     <div class="hero-meta">
       <span>Classically Trained</span>
       <span>Suwanee, Georgia</span>
     </div>
   </div>
 </header>
+
+<section id="ricordi" class="release-block">
+  <div class="release-grid">
+    <div class="release-cover">
+      <img src="assets/ricordi-cover.jpg" alt="Ricordi album cover" width="640" height="640">
+    </div>
+    <div class="release-copy">
+      <div class="section-label">New Album</div>
+      <h2>Ricordi</h2>
+      <div class="release-meta">Solo Piano &middot; 2026</div>
+      <p>Seven pieces for solo piano on memory. Childhood, an old house, a letter never sent, a grandmother's piano, and what stays behind.</p>
+      <ol class="tracklist">
+        <li>Ricordi</li>
+        <li>L'Infanzia</li>
+        <li>La Casa Vecchia</li>
+        <li>Lettera Mai Spedita</li>
+        <li>Il Pianoforte di Nonna</li>
+        <li>Quello Che Resta</li>
+        <li>Addio, Dolce</li>
+      </ol>
+      <div class="release-actions">
+        <a class="btn-solid" href="https://open.spotify.com/album/3i5WGzVxEV7iNmnPtWLtPu" target="_blank" rel="noopener">Listen on Spotify</a>
+        <a class="btn-line" href="https://distrokid.com/hyperfollow/andrewtrotter/ricordi/" target="_blank" rel="noopener">All Platforms</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section id="listen" class="listen-block">
   <div class="listen-inner">
@@ -571,6 +692,7 @@
       <div class="work-group">
         <h3>Solo Piano</h3>
         <ul>
+          <li><em>Ricordi</em> — album, 2026</li>
           <li><em>Piano, Vol. 1</em></li>
           <li><em>Lullaby</em></li>
           <li><em>I love you more</em></li>
