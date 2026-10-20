@@ -463,6 +463,80 @@
     line-height: 1.7;
   }
 
+  /* ---------- Studio / For Students ---------- */
+  #studio {
+    background: var(--cream-deep);
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+  .studio-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 64px;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .studio-copy .section-title {
+    margin-bottom: 24px;
+  }
+  .studio-copy p {
+    color: var(--ink-soft);
+    font-size: 17px;
+    margin-bottom: 28px;
+    max-width: 520px;
+  }
+  .pamphlet-card {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    padding: 40px 36px;
+    text-align: center;
+    box-shadow: 0 12px 32px rgba(31,29,26,0.08);
+  }
+  .pamphlet-card .pamphlet-label {
+    font-size: 12px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--accent-deep);
+    margin-bottom: 14px;
+  }
+  .pamphlet-card h3 {
+    font-size: 30px;
+    font-style: italic;
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+  .pamphlet-card .pamphlet-meta {
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-bottom: 28px;
+  }
+  .pamphlet-card .pamphlet-download {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 14px 34px;
+    font-size: 14px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    background: var(--ink);
+    color: var(--cream);
+    border: 1px solid var(--ink);
+    transition: all .25s ease;
+  }
+  .pamphlet-card .pamphlet-download:hover {
+    background: var(--accent-deep);
+    border-color: var(--accent-deep);
+    color: var(--cream);
+  }
+  @media (max-width: 800px) {
+    .studio-grid { grid-template-columns: 1fr; gap: 44px; }
+    .pamphlet-card { padding: 32px 24px; }
+  }
+
   /* ---------- Manuscript gallery (small grid) ---------- */
   .manuscript-strip {
     background: var(--cream-deep);
@@ -606,6 +680,7 @@
       <li><a href="#music">Music</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#performance">Performance</a></li>
+      <li><a href="#studio">Studio</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
@@ -773,6 +848,24 @@
       <div class="door">
         <h3>Recitals &amp; Collaborations</h3>
         <p>Solo recitals, concerto performances, and chamber collaborations with vocalists and instrumentalists.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="studio">
+  <div class="container">
+    <div class="studio-grid">
+      <div class="studio-copy">
+        <div class="section-label">Studio</div>
+        <h2 class="section-title">For students</h2>
+        <p>A short teaching pamphlet on piano fundamentals — bench posture, floating elbow, wrist alignment, finger curvature, and a set of chord studies in the Liszt tradition. Free to download, use, and share.</p>
+      </div>
+      <div class="pamphlet-card">
+        <div class="pamphlet-label">Teaching Pamphlet</div>
+        <h3>Piano Technique &amp; Chord Studies</h3>
+        <div class="pamphlet-meta">PDF &middot; 6 pages</div>
+        <a class="pamphlet-download" href="assets/piano-technique-pamphlet.pdf" target="_blank" rel="noopener" download>Download PDF</a>
       </div>
     </div>
   </div>
