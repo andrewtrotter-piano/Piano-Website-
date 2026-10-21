@@ -469,22 +469,23 @@
     border-top: 1px solid var(--rule);
     border-bottom: 1px solid var(--rule);
   }
-  .studio-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.1fr;
-    gap: 64px;
-    align-items: center;
-    max-width: 1000px;
-    margin: 0 auto;
+  .studio-intro {
+    max-width: 720px;
+    margin: 0 auto 64px;
+    text-align: center;
   }
-  .studio-copy .section-title {
-    margin-bottom: 24px;
-  }
-  .studio-copy p {
+  .studio-intro .section-label { margin-bottom: 14px; }
+  .studio-intro .section-title { margin-bottom: 24px; }
+  .studio-intro p {
     color: var(--ink-soft);
     font-size: 17px;
-    margin-bottom: 28px;
-    max-width: 520px;
+  }
+  .pamphlet-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+    max-width: 900px;
+    margin: 0 auto;
   }
   .pamphlet-card {
     background: var(--paper);
@@ -492,6 +493,9 @@
     padding: 40px 36px;
     text-align: center;
     box-shadow: 0 12px 32px rgba(31,29,26,0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
   .pamphlet-card .pamphlet-label {
     font-size: 12px;
@@ -501,7 +505,7 @@
     margin-bottom: 14px;
   }
   .pamphlet-card h3 {
-    font-size: 30px;
+    font-size: 28px;
     font-style: italic;
     margin-bottom: 10px;
     line-height: 1.2;
@@ -526,6 +530,7 @@
     color: var(--cream);
     border: 1px solid var(--ink);
     transition: all .25s ease;
+    align-self: center;
   }
   .pamphlet-card .pamphlet-download:hover {
     background: var(--accent-deep);
@@ -533,7 +538,7 @@
     color: var(--cream);
   }
   @media (max-width: 800px) {
-    .studio-grid { grid-template-columns: 1fr; gap: 44px; }
+    .pamphlet-grid { grid-template-columns: 1fr; gap: 24px; }
     .pamphlet-card { padding: 32px 24px; }
   }
 
@@ -855,17 +860,23 @@
 
 <section id="studio">
   <div class="container">
-    <div class="studio-grid">
-      <div class="studio-copy">
-        <div class="section-label">Studio</div>
-        <h2 class="section-title">For students</h2>
-        <p>A short teaching pamphlet on piano fundamentals — bench posture, floating elbow, wrist alignment, finger curvature, and a set of chord studies in the Liszt tradition. Free to download, use, and share.</p>
-      </div>
+    <div class="studio-intro">
+      <div class="section-label">Studio</div>
+      <h2 class="section-title">For students</h2>
+      <p>Teaching pamphlets on piano fundamentals, technique, and the daily regimen. Free to download, use, and share.</p>
+    </div>
+    <div class="pamphlet-grid">
       <div class="pamphlet-card">
         <div class="pamphlet-label">Teaching Pamphlet</div>
         <h3>Piano Technique &amp; Chord Studies</h3>
         <div class="pamphlet-meta">PDF &middot; 6 pages</div>
         <a class="pamphlet-download" href="assets/piano-technique-pamphlet.pdf" target="_blank" rel="noopener" download>Download PDF</a>
+      </div>
+      <div class="pamphlet-card">
+        <div class="pamphlet-label">Teaching Pamphlet</div>
+        <h3>Adele Marcus Technical Regimen</h3>
+        <div class="pamphlet-meta">PDF &middot; 2 pages</div>
+        <a class="pamphlet-download" href="assets/marcus-technical-regimen.pdf" target="_blank" rel="noopener" download>Download PDF</a>
       </div>
     </div>
   </div>
