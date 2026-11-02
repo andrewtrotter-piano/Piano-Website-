@@ -1,1798 +1,1038 @@
-<html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Andrew Trotter — Composer &amp; Pianist</title>
-<meta name="description" content="Andrew Trotter — composer and pianist. Symphony, ballet, string quartet, solo piano. Suwanee, Georgia.">
+<title>Andrew Trotter — Composer</title>
+<meta name="description" content="Andrew Trotter — composer and pianist. Symphonies, ballet, string quartets, piano music.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600&amp;family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500;1,9..144,600;1,9..144,700&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --urtext:        #003F72;
-    --urtext-deep:   #002C50;
-    --urtext-light:  #1E5A8E;
-    --ivory:         #F6F1E7;
-    --ivory-soft:    #FBF7EC;
-    --ivory-deep:    #EDE4CF;
-    --ink:           #0F1419;
-    --ink-soft:      #2A2E33;
-    --ink-mute:      #6B6459;
-    --gold:          #B08D4F;
-    --red:           #8B2E2E;
-    --rule-light:    rgba(0, 63, 114, 0.18);
-    --rule-ivory:    rgba(246, 241, 231, 0.22);
+    --ink:        #0F0F14;
+    --ink-soft:   #1C1C22;
+    --cream:      #F2EDE2;
+    --cream-deep: #E8E1D1;
+    --cream-soft: #F8F4EB;
+    --ox:         #8B2635;
+    --ox-deep:    #6B1D29;
+    --ochre:      #B8873C;
+    --gray:       #8A8275;
+    --gray-mute:  #B5AC9B;
+    --rule-ink:   rgba(15, 15, 20, 0.14);
+    --rule-cream: rgba(242, 237, 226, 0.16);
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
   html { scroll-behavior: smooth; }
-
   body {
     font-family: 'EB Garamond', Georgia, serif;
-    font-size: 18px;
-    line-height: 1.65;
+    font-size: 19px;
+    line-height: 1.6;
     color: var(--ink);
-    background: var(--ivory);
-    -webkit-font-smoothing: antialiased;
+    background: var(--cream);
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
   }
-
   h1, h2, h3, h4 {
-    font-family: 'Fraunces', 'EB Garamond', serif;
-    font-weight: 500;
-    letter-spacing: -0.01em;
-    color: var(--ink);
-    font-variation-settings: "opsz" 144;
-  }
-
-  .mono {
-    font-family: 'JetBrains Mono', 'SFMono-Regular', Menlo, monospace;
-    font-feature-settings: 'ss01';
-  }
-
-  a { color: var(--urtext); text-decoration: none; transition: color .2s ease, opacity .2s ease; }
-  a:hover { color: var(--urtext-deep); }
-
-  img { max-width: 100%; display: block; }
-
-  ::selection { background: var(--urtext); color: var(--ivory); }
-
-  /* ---------- Navigation ---------- */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    background: rgba(246, 241, 231, 0.94);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--rule-light);
-    padding: 16px 0;
-    transition: padding .25s ease, background .25s ease;
-  }
-  nav.scrolled { padding: 10px 0; background: rgba(246, 241, 231, 0.98); }
-  .nav-container {
-    max-width: 1240px;
-    margin: 0 auto;
-    padding: 0 36px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .brand {
     font-family: 'Fraunces', serif;
-    font-size: 20px;
-    font-weight: 500;
-    letter-spacing: 0.02em;
-    color: var(--urtext);
-    font-style: italic;
-    font-variation-settings: "opsz" 144;
-  }
-  .brand .brand-opus {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.3em;
-    color: var(--ink-mute);
-    margin-left: 8px;
-    font-style: normal;
-    vertical-align: middle;
-  }
-  .nav-links { display: flex; gap: 30px; list-style: none; }
-  .nav-links a {
-    color: var(--ink-soft);
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    position: relative;
-  }
-  .nav-links a::after {
-    content: '';
-    position: absolute;
-    left: 0; right: 0; bottom: -4px;
-    height: 1px;
-    background: var(--urtext);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform .25s ease;
-  }
-  .nav-links a:hover { color: var(--urtext); }
-  .nav-links a:hover::after { transform: scaleX(1); }
-
-  .mobile-toggle { display: none; background: none; border: none; cursor: pointer; }
-
-  /* ---------- Hero ---------- */
-  header.hero {
-    position: relative;
-    min-height: 100vh;
-    background: var(--urtext);
-    color: var(--ivory);
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-    padding: 120px 36px 80px;
-  }
-
-  .hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(ellipse at 70% 40%, rgba(30, 90, 142, 0.6) 0%, transparent 60%),
-      radial-gradient(ellipse at 20% 80%, rgba(0, 44, 80, 0.8) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  .hero-grain {
-    position: absolute;
-    inset: 0;
-    opacity: 0.06;
-    pointer-events: none;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/></filter><rect width='200' height='200' filter='url(%23n)' opacity='0.9'/></svg>");
-  }
-
-  .hero-inner {
-    position: relative;
-    max-width: 1240px;
-    margin: 0 auto;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    gap: 72px;
-    align-items: center;
-    z-index: 2;
-  }
-
-  .hero-copy .hero-eyebrow {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.4em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 24px;
-    display: flex;
-    align-items: center;
-    gap: 14px;
-  }
-  .hero-copy .hero-eyebrow::before {
-    content: '';
-    width: 36px;
-    height: 1px;
-    background: var(--gold);
-  }
-
-  .hero h1 {
-    font-size: clamp(64px, 11vw, 150px);
     font-weight: 400;
-    line-height: 0.95;
-    letter-spacing: -0.03em;
-    margin-bottom: 24px;
-    color: var(--ivory);
-    font-style: italic;
+    letter-spacing: -0.02em;
     font-variation-settings: "opsz" 144, "SOFT" 50;
   }
-  .hero h1 .amp {
-    color: var(--gold);
-    font-style: italic;
-    font-weight: 500;
-  }
+  .mono { font-family: 'JetBrains Mono', 'SFMono-Regular', monospace; }
+  a { color: inherit; text-decoration: none; transition: all .25s ease; }
+  ::selection { background: var(--ox); color: var(--cream); }
 
-  .hero-tagline {
+  /* ─── NAV ──────────────────────────────────────── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 22px 0; mix-blend-mode: difference;
+    color: var(--cream);
+    transition: padding .3s ease;
+  }
+  nav.scrolled { padding: 14px 0; }
+  .nav-wrap {
+    max-width: 1360px; margin: 0 auto; padding: 0 48px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .brand {
+    font-family: 'Fraunces', serif; font-style: italic;
+    font-size: 20px; font-weight: 400;
+    font-variation-settings: "opsz" 144, "SOFT" 100;
+    display: flex; align-items: baseline; gap: 10px;
+  }
+  .brand .dot { width: 6px; height: 6px; background: var(--ox); border-radius: 50%; }
+  .nav-links { display: flex; gap: 28px; list-style: none; }
+  .nav-links a {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 13px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: rgba(246, 241, 231, 0.72);
-    margin-bottom: 48px;
-    line-height: 1.8;
+    font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
+    position: relative; opacity: 0.75;
   }
-  .hero-tagline .sep {
-    color: var(--gold);
-    margin: 0 10px;
+  .nav-links a::after {
+    content: ''; position: absolute; left: 0; right: 100%; bottom: -5px;
+    height: 1px; background: currentColor; transition: right .3s ease;
   }
+  .nav-links a:hover { opacity: 1; }
+  .nav-links a:hover::after { right: 0; }
 
-  .hero-ctas {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
+  /* ─── HERO ─────────────────────────────────────── */
+  .hero {
+    position: relative; min-height: 100vh;
+    background: var(--ink); color: var(--cream);
+    overflow: hidden; display: flex; flex-direction: column;
+    justify-content: center; padding: 120px 48px 80px;
   }
-  .hero-ctas a {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    padding: 16px 32px;
+  .hero-grain {
+    position: absolute; inset: 0; opacity: 0.08; pointer-events: none; z-index: 1;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/></filter><rect width='300' height='300' filter='url(%23n)' opacity='0.95'/></svg>");
+  }
+  .hero-gestures {
+    position: absolute; inset: 0; pointer-events: none; z-index: 1;
+    opacity: 0.14;
+  }
+  .hero-gestures svg { position: absolute; }
+  .g1 { top: 8%; left: 6%; width: 420px; transform: rotate(-7deg); }
+  .g2 { top: 60%; right: 4%; width: 380px; transform: rotate(5deg); }
+  .g3 { top: 24%; right: 18%; width: 180px; transform: rotate(14deg); }
+  .g4 { bottom: 14%; left: 12%; width: 240px; transform: rotate(-3deg); }
+
+  .hero-inner {
+    position: relative; z-index: 2;
+    max-width: 1360px; margin: 0 auto; width: 100%;
+  }
+  .hero-eyebrow {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    border: 1px solid var(--ivory);
-    color: var(--ivory);
-    transition: all .25s ease;
+    font-size: 11px; letter-spacing: 0.4em; text-transform: uppercase;
+    color: var(--ochre);
+    margin-bottom: 40px; display: flex; align-items: center; gap: 16px;
   }
-  .hero-ctas a.primary { background: var(--ivory); color: var(--urtext); }
-  .hero-ctas a.primary:hover { background: var(--gold); color: var(--ink); border-color: var(--gold); }
-  .hero-ctas a:not(.primary):hover {
-    background: rgba(246, 241, 231, 0.08);
-    border-color: var(--gold);
-    color: var(--gold);
-  }
-  .hero-ctas a .arrow { transition: transform .25s ease; }
-  .hero-ctas a:hover .arrow { transform: translateX(4px); }
+  .hero-eyebrow::before { content: ''; width: 48px; height: 1px; background: var(--ochre); }
+  .hero-eyebrow::after { content: ''; flex: 1; max-width: 180px; height: 1px; background: rgba(184, 135, 60, 0.3); }
 
-  .hero-portrait {
-    position: relative;
-    aspect-ratio: 4 / 5;
-    background: url('assets/portrait-formal.jpg') center/cover no-repeat;
-    border: 1px solid rgba(246, 241, 231, 0.14);
-    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
-    filter: contrast(1.05) brightness(0.92) sepia(0.08) hue-rotate(190deg) saturate(1.3);
-  }
-  .hero-portrait::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(0, 63, 114, 0.1) 0%, rgba(0, 44, 80, 0.5) 100%);
-    mix-blend-mode: multiply;
-  }
-  .hero-portrait-caption {
-    position: absolute;
-    bottom: -40px; left: 0;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: rgba(246, 241, 231, 0.5);
-  }
-
-  .hero-footer {
-    position: absolute;
-    bottom: 32px; left: 36px; right: 36px;
-    z-index: 2;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: rgba(246, 241, 231, 0.5);
-    max-width: 1240px;
-    margin: 0 auto;
-  }
-  .scroll-cue {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .scroll-cue::after {
-    content: '';
-    width: 1px;
-    height: 24px;
-    background: var(--gold);
-    animation: scroll-pulse 1.8s ease-in-out infinite;
-  }
-  @keyframes scroll-pulse {
-    0%, 100% { opacity: 0.3; transform: scaleY(0.6); }
-    50%      { opacity: 1;   transform: scaleY(1); }
-  }
-
-  @media (max-width: 900px) {
-    .hero-inner { grid-template-columns: 1fr; gap: 48px; }
-    .hero-portrait { max-width: 420px; margin: 0 auto; width: 100%; }
-    .hero-portrait-caption { position: static; margin-top: 12px; text-align: center; }
-    .hero-footer { display: none; }
-  }
-
-  /* ---------- Opus Index ---------- */
-  .opus-index {
-    background: var(--ivory);
-    padding: 120px 36px;
-    border-bottom: 1px solid var(--rule-light);
-  }
-  .opus-inner {
-    max-width: 1240px;
-    margin: 0 auto;
-  }
-  .section-eyebrow {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.4em;
-    text-transform: uppercase;
-    color: var(--urtext);
-    margin-bottom: 24px;
-    display: flex;
-    align-items: center;
-    gap: 14px;
-  }
-  .section-eyebrow::before {
-    content: '';
-    width: 32px;
-    height: 1px;
-    background: var(--urtext);
-  }
-
-  .opus-header {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 72px;
-    align-items: end;
-    margin-bottom: 80px;
-  }
-  .opus-header h2 {
-    font-size: clamp(44px, 6vw, 72px);
-    font-style: italic;
-    line-height: 1.05;
-    color: var(--urtext);
-  }
-  .opus-header p {
-    font-size: 19px;
-    color: var(--ink-soft);
-    max-width: 480px;
-    line-height: 1.75;
-  }
-
-  .opus-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-    border-top: 1px solid var(--rule-light);
-    padding-top: 48px;
-  }
-  .opus-cell {
-    position: relative;
-    padding: 18px 0 32px;
-    border-right: 1px solid var(--rule-light);
-    padding-right: 24px;
-    transition: transform .3s ease;
-  }
-  .opus-cell:last-child { border-right: none; }
-  .opus-cell .opus-roman {
+  .hero-title {
     font-family: 'Fraunces', serif;
-    font-size: 56px;
-    font-style: italic;
-    color: var(--urtext);
-    line-height: 1;
-    margin-bottom: 20px;
-    font-variation-settings: "opsz" 144;
+    font-size: clamp(80px, 16vw, 240px);
+    line-height: 0.86; font-weight: 300;
+    letter-spacing: -0.04em; margin-bottom: 56px;
+    font-variation-settings: "opsz" 144, "SOFT" 100;
   }
-  .opus-cell .opus-roman .num {
+  .hero-title .first {
+    display: block; font-style: italic;
+    color: var(--cream); margin-left: 0;
+  }
+  .hero-title .last {
+    display: block; font-style: normal; font-weight: 400;
+    color: var(--cream);
+    margin-left: clamp(60px, 12vw, 240px);
+    margin-top: -0.08em;
+  }
+  .hero-title .last .amp {
+    color: var(--ox); font-style: italic; font-weight: 300;
+    display: inline-block; transform: translateY(0.05em);
+  }
+
+  .hero-meta {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    flex-wrap: wrap; gap: 32px; margin-top: 20px;
+  }
+  .hero-tag {
+    font-family: 'Fraunces', serif; font-style: italic;
+    font-size: clamp(20px, 2.4vw, 28px); line-height: 1.4;
+    color: rgba(242, 237, 226, 0.8); max-width: 520px;
+    font-variation-settings: "opsz" 24;
+  }
+  .hero-stats {
+    display: flex; gap: 48px;
     font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.3em;
-    color: var(--ink-mute);
-    font-style: normal;
-    margin-left: 8px;
-    vertical-align: top;
-    position: relative;
-    top: 8px;
+    font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase;
+    color: rgba(242, 237, 226, 0.55);
   }
-  .opus-cell .opus-title {
+  .hero-stats .stat strong {
+    display: block; font-size: 32px; letter-spacing: -0.02em;
+    font-family: 'Fraunces', serif; font-style: italic; font-weight: 400;
+    color: var(--ochre); margin-bottom: 6px; text-transform: none;
+  }
+
+  .scroll-mark {
+    position: absolute; left: 48px; bottom: 36px; z-index: 3;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 0.35em; text-transform: uppercase;
+    color: rgba(242, 237, 226, 0.5);
+    display: flex; align-items: center; gap: 14px;
+  }
+  .scroll-mark .line {
+    width: 1px; height: 44px; background: var(--ochre);
+    position: relative; overflow: hidden;
+  }
+  .scroll-mark .line::after {
+    content: ''; position: absolute; top: -100%; left: 0; right: 0; height: 50%;
+    background: linear-gradient(to bottom, transparent, var(--cream));
+    animation: drip 2.4s cubic-bezier(.6,.1,.4,1) infinite;
+  }
+  @keyframes drip { 0%{top:-100%} 100%{top:200%} }
+
+  /* ─── OPENING LINE ─────────────────────────────── */
+  .opener {
+    padding: 160px 48px 120px; position: relative;
+    background: var(--cream);
+  }
+  .opener-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 2fr; gap: 80px;
+    align-items: start;
+  }
+  .opener-mark {
+    position: sticky; top: 140px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase;
+    color: var(--gray);
+  }
+  .opener-mark .num {
+    display: block; font-family: 'Fraunces', serif; font-style: italic;
+    font-size: 96px; color: var(--ox); margin-bottom: 20px;
+    font-variation-settings: "opsz" 144, "SOFT" 100;
+    text-transform: none; letter-spacing: -0.02em; line-height: 0.9;
+  }
+  .opener-text {
     font-family: 'Fraunces', serif;
-    font-size: 20px;
-    font-style: italic;
-    color: var(--ink);
-    margin-bottom: 6px;
-    line-height: 1.25;
+    font-size: clamp(28px, 3.4vw, 44px);
+    line-height: 1.3; font-weight: 300; letter-spacing: -0.015em;
+    font-variation-settings: "opsz" 48, "SOFT" 50;
   }
-  .opus-cell .opus-meta {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--ink-mute);
+  .opener-text em {
+    font-style: italic; color: var(--ox);
+    font-variation-settings: "opsz" 48, "SOFT" 100;
   }
-  .opus-cell.current {
-    background: linear-gradient(180deg, rgba(0, 63, 114, 0.04) 0%, transparent 100%);
-  }
-  .opus-cell.current::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 24px; height: 2px;
-    background: var(--gold);
-  }
+  .opener-text p + p { margin-top: 1.3em; }
 
-  @media (max-width: 900px) {
-    .opus-header { grid-template-columns: 1fr; gap: 24px; align-items: start; }
-    .opus-grid { grid-template-columns: repeat(2, 1fr); }
-    .opus-cell:nth-child(2n) { border-right: none; }
-    .opus-cell:nth-child(1), .opus-cell:nth-child(2) { border-bottom: 1px solid var(--rule-light); padding-bottom: 32px; margin-bottom: 24px; }
+  /* ─── OPUS INDEX ───────────────────────────────── */
+  .opus-section {
+    background: var(--ink); color: var(--cream);
+    padding: 160px 48px 140px; position: relative; overflow: hidden;
   }
-
-  /* ---------- Release block (dark) ---------- */
-  .release-block {
-    background: var(--urtext);
-    color: var(--ivory);
-    padding: 140px 36px;
-    position: relative;
-    overflow: hidden;
-  }
-  .release-block.alt { background: var(--ivory); color: var(--ink); border-top: 1px solid var(--rule-light); border-bottom: 1px solid var(--rule-light); }
-  .release-block::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse at 80% 20%, rgba(30, 90, 142, 0.4) 0%, transparent 60%);
+  .opus-section::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 85% 20%, rgba(139, 38, 53, 0.15), transparent 60%);
     pointer-events: none;
   }
-  .release-block.alt::before { display: none; }
-
-  .release-grid {
-    position: relative;
-    max-width: 1240px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1.1fr;
-    gap: 80px;
-    align-items: center;
-    z-index: 2;
+  .opus-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 2; }
+  .section-head {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding-bottom: 24px; border-bottom: 1px solid var(--rule-cream);
+    margin-bottom: 100px; flex-wrap: wrap; gap: 20px;
   }
-  .release-grid.reverse { grid-template-columns: 1.1fr 1fr; }
-  .release-grid.reverse .release-cover { order: 2; }
-
-  .release-cover {
-    position: relative;
+  .section-head .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.4em; text-transform: uppercase;
+    color: var(--ochre); display: flex; align-items: center; gap: 14px;
   }
-  .release-cover img {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.4);
+  .section-head .label::before { content: ''; width: 36px; height: 1px; background: var(--ochre); }
+  .section-head h2 {
+    font-size: clamp(44px, 6vw, 84px); font-style: italic; font-weight: 300;
+    line-height: 0.95; color: var(--cream); letter-spacing: -0.03em;
+    font-variation-settings: "opsz" 144, "SOFT" 100;
+  }
+  .section-head .side-note {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--gray); max-width: 220px; line-height: 1.8;
+  }
+
+  .opus-stream { display: flex; flex-direction: column; gap: 20px; }
+  .opus-entry {
+    display: grid; grid-template-columns: 1fr 2fr 1fr; gap: 60px;
+    align-items: baseline; padding: 40px 0;
+    border-top: 1px solid var(--rule-cream);
+    position: relative; transition: all .4s ease;
+  }
+  .opus-entry:last-child { border-bottom: 1px solid var(--rule-cream); }
+  .opus-entry:hover { padding-left: 20px; }
+  .opus-entry:hover .opus-no { color: var(--ox); transform: translateX(-6px); }
+
+  .opus-no {
+    font-family: 'Fraunces', serif; font-style: italic;
+    font-size: clamp(72px, 10vw, 140px); line-height: 0.9;
+    color: var(--ochre); font-weight: 300; letter-spacing: -0.03em;
+    font-variation-settings: "opsz" 144, "SOFT" 100;
+    transition: all .4s ease;
+  }
+  .opus-work {
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .opus-work .title {
+    font-family: 'Fraunces', serif; font-style: italic;
+    font-size: clamp(26px, 3vw, 40px); font-weight: 400;
+    line-height: 1.1; color: var(--cream); letter-spacing: -0.015em;
+    font-variation-settings: "opsz" 48, "SOFT" 50;
+  }
+  .opus-work .sub {
+    font-family: 'EB Garamond', serif; font-style: italic;
+    color: var(--gray-mute); font-size: 18px; line-height: 1.5;
+  }
+  .opus-meta {
+    display: flex; flex-direction: column; gap: 6px; text-align: right;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--gray);
+  }
+  .opus-meta .year { color: var(--ochre); font-size: 12px; letter-spacing: 0.3em; }
+  .opus-meta .state {
+    display: inline-flex; justify-content: flex-end; gap: 8px; align-items: center;
+    color: rgba(242, 237, 226, 0.5);
+  }
+  .opus-meta .state::before {
+    content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--ochre);
+  }
+  .opus-meta .state.wip::before { background: var(--ox); animation: pulse 2s ease-in-out infinite; }
+  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+  @media (max-width: 820px) {
+    .opus-entry { grid-template-columns: auto 1fr; gap: 24px; }
+    .opus-meta { grid-column: 1 / -1; flex-direction: row; justify-content: space-between; text-align: left; }
+    .opus-no { font-size: 56px; }
+  }
+
+  /* ─── RELEASES ─────────────────────────────────── */
+  .releases {
+    background: var(--cream); padding: 160px 48px 140px; position: relative;
+  }
+  .releases-inner { max-width: 1300px; margin: 0 auto; }
+  .release-row {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+    margin-top: 60px;
+  }
+  .release-card {
+    background: var(--cream-soft); padding: 44px;
+    border: 1px solid var(--rule-ink);
+    position: relative; overflow: hidden;
+    transition: all .5s cubic-bezier(.2,.7,.2,1);
+  }
+  .release-card::before {
+    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px;
+    background: var(--ox); transform: scaleX(0); transform-origin: left;
     transition: transform .5s ease;
   }
-  .release-cover:hover img { transform: translate(-4px, -4px); }
-  .release-cover::before {
-    content: '';
-    position: absolute;
-    inset: 8px -8px -8px 8px;
-    border: 1px solid var(--gold);
-    opacity: 0.5;
-    z-index: -1;
-    transition: all .5s ease;
-  }
-  .release-cover:hover::before { inset: 12px -12px -12px 12px; }
-
-  .release-eyebrow {
+  .release-card:hover { transform: translateY(-6px); box-shadow: 0 24px 60px rgba(15,15,20,0.1); }
+  .release-card:hover::before { transform: scaleX(1); }
+  .release-card .rel-label {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.4em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 14px;
+    font-size: 10px; letter-spacing: 0.35em; text-transform: uppercase;
+    color: var(--ox); margin-bottom: 24px;
   }
-  .release-eyebrow::before {
-    content: '';
-    width: 32px;
-    height: 1px;
-    background: var(--gold);
-  }
-  .release-block.alt .release-eyebrow { color: var(--urtext); }
-  .release-block.alt .release-eyebrow::before { background: var(--urtext); }
-
-  .release-copy h2 {
-    font-size: clamp(54px, 8vw, 92px);
-    font-style: italic;
-    line-height: 0.98;
+  .release-card h3 {
+    font-size: clamp(36px, 4vw, 56px); font-style: italic; font-weight: 300;
+    line-height: 1; color: var(--ink); margin-bottom: 20px;
     letter-spacing: -0.02em;
-    margin-bottom: 14px;
-    color: inherit;
+    font-variation-settings: "opsz" 72, "SOFT" 100;
   }
-  .release-block:not(.alt) .release-copy h2 { color: var(--ivory); }
-
-  .release-meta {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: rgba(246, 241, 231, 0.55);
-    margin-bottom: 32px;
+  .release-card .rel-sub {
+    font-family: 'EB Garamond', serif; font-style: italic;
+    font-size: 18px; color: var(--gray); margin-bottom: 36px;
   }
-  .release-block.alt .release-meta { color: var(--ink-mute); }
-
-  .release-copy p.release-blurb {
-    font-size: 19px;
-    margin-bottom: 36px;
-    max-width: 540px;
-    line-height: 1.7;
-    color: rgba(246, 241, 231, 0.82);
-    font-style: italic;
+  .release-card .rel-tracks {
+    display: flex; flex-direction: column; gap: 2px;
+    padding: 24px 0; border-top: 1px dotted var(--rule-ink);
+    border-bottom: 1px dotted var(--rule-ink); margin-bottom: 32px;
   }
-  .release-block.alt .release-copy p.release-blurb { color: var(--ink-soft); }
-
-  .tracklist {
-    list-style: none;
-    counter-reset: track;
-    border-top: 1px solid var(--rule-ivory);
-    margin-bottom: 44px;
-  }
-  .release-block.alt .tracklist { border-top-color: var(--rule-light); }
-  .tracklist li {
-    counter-increment: track;
-    display: flex;
-    align-items: baseline;
-    gap: 20px;
-    padding: 14px 0;
-    border-bottom: 1px solid var(--rule-ivory);
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-size: 20px;
-    color: var(--ivory);
-    transition: padding-left .25s ease;
-  }
-  .release-block.alt .tracklist li { border-bottom-color: var(--rule-light); color: var(--ink); }
-  .tracklist li:hover { padding-left: 10px; }
-  .tracklist li::before {
-    content: counter(track, decimal-leading-zero);
-    font-family: 'JetBrains Mono', monospace;
-    font-style: normal;
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    color: var(--gold);
-    min-width: 32px;
-  }
-
-  .release-actions {
-    display: flex;
-    gap: 14px;
-    flex-wrap: wrap;
-  }
-  .release-actions a {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    padding: 15px 30px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    border: 1px solid var(--ivory);
-    color: var(--ivory);
-    transition: all .25s ease;
-  }
-  .release-actions .btn-solid { background: var(--ivory); color: var(--urtext); }
-  .release-actions .btn-solid:hover { background: var(--gold); color: var(--ink); border-color: var(--gold); }
-  .release-actions .btn-line:hover { background: rgba(246, 241, 231, 0.08); border-color: var(--gold); color: var(--gold); }
-  .release-block.alt .release-actions a { border-color: var(--urtext); color: var(--urtext); }
-  .release-block.alt .release-actions .btn-solid { background: var(--urtext); color: var(--ivory); }
-  .release-block.alt .release-actions .btn-solid:hover { background: var(--urtext-deep); border-color: var(--urtext-deep); }
-  .release-block.alt .release-actions .btn-line:hover { background: var(--urtext); color: var(--ivory); }
-
-  @media (max-width: 900px) {
-    .release-block { padding: 88px 24px; }
-    .release-grid, .release-grid.reverse { grid-template-columns: 1fr; gap: 48px; }
-    .release-grid.reverse .release-cover { order: 0; }
-    .release-cover { max-width: 440px; margin: 0 auto; width: 100%; }
-    .release-actions a { flex: 1 1 100%; justify-content: center; }
-  }
-
-  /* ---------- Catalog ---------- */
-  .catalog-block {
-    background: var(--ivory);
-    padding: 140px 36px;
-    border-bottom: 1px solid var(--rule-light);
-  }
-  .catalog-inner { max-width: 1240px; margin: 0 auto; }
-  .catalog-header {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 72px;
-    margin-bottom: 72px;
-    align-items: end;
-  }
-  .catalog-header h2 {
-    font-size: clamp(44px, 6vw, 72px);
-    font-style: italic;
-    color: var(--urtext);
-    line-height: 1.05;
-  }
-  .catalog-header p {
+  .release-card .rel-tracks .trk {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 8px 0; font-family: 'Fraunces', serif; font-style: italic; font-size: 17px;
     color: var(--ink-soft);
-    font-size: 19px;
-    line-height: 1.75;
   }
+  .release-card .rel-tracks .trk .n {
+    font-family: 'JetBrains Mono', monospace; font-style: normal; font-size: 10px;
+    letter-spacing: 0.25em; color: var(--gray); margin-right: 20px;
+  }
+  .release-card .rel-link {
+    display: inline-flex; align-items: center; gap: 12px;
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--ink); border-bottom: 1px solid var(--ink);
+    padding-bottom: 6px;
+  }
+  .release-card .rel-link:hover { color: var(--ox); border-color: var(--ox); gap: 18px; }
 
-  .catalog-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0;
-    border-top: 1px solid var(--rule-light);
-  }
-  .work-group {
-    padding: 48px 48px 48px 0;
-    border-bottom: 1px solid var(--rule-light);
-    border-right: 1px solid var(--rule-light);
-  }
-  .work-group:nth-child(2n) { padding-right: 0; padding-left: 48px; border-right: none; }
-  .work-group:nth-last-child(1), .work-group:nth-last-child(2) { border-bottom: none; }
+  @media (max-width: 820px) { .release-row { grid-template-columns: 1fr; gap: 32px; } }
 
-  .work-group-header {
-    display: flex;
-    align-items: baseline;
-    gap: 16px;
-    margin-bottom: 24px;
-  }
-  .work-group h3 {
-    font-size: 28px;
-    font-style: italic;
-    color: var(--urtext);
-    line-height: 1;
-  }
-  .work-group .group-count {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.3em;
-    color: var(--ink-mute);
-  }
-
-  .work-group ul { list-style: none; }
-  .work-group li {
-    padding: 12px 0;
-    color: var(--ink-soft);
-    border-bottom: 1px dotted var(--rule-light);
-    font-size: 17px;
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 16px;
-    transition: color .2s ease, padding-left .25s ease;
-  }
-  .work-group li:last-child { border-bottom: none; }
-  .work-group li:hover { padding-left: 8px; color: var(--urtext); }
-  .work-group li em {
-    color: var(--ink);
-    font-style: italic;
-    font-family: 'Fraunces', serif;
-    font-size: 19px;
-  }
-  .work-group li:hover em { color: var(--urtext); }
-  .work-group li .work-op {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    color: var(--ink-mute);
-    text-transform: uppercase;
-    flex-shrink: 0;
-  }
-
-  @media (max-width: 900px) {
-    .catalog-header { grid-template-columns: 1fr; gap: 24px; }
-    .catalog-grid { grid-template-columns: 1fr; }
-    .work-group { padding: 36px 0; border-right: none; }
-    .work-group:nth-child(2n) { padding-left: 0; }
-  }
-
-  /* ---------- Sheet Music feature (dark) ---------- */
-  .sheets-block {
-    background: var(--urtext-deep);
-    color: var(--ivory);
-    padding: 140px 36px;
-    position: relative;
+  /* ─── CATALOG ──────────────────────────────────── */
+  .catalog {
+    background: var(--cream-deep); padding: 160px 48px 140px; position: relative;
     overflow: hidden;
   }
-  .sheets-block::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse at 30% 70%, rgba(30, 90, 142, 0.5) 0%, transparent 55%);
+  .cat-mark {
+    position: absolute; top: 60px; right: -40px;
+    font-family: 'Fraunces', serif; font-style: italic;
+    font-size: 320px; line-height: 1; color: rgba(139, 38, 53, 0.06);
+    letter-spacing: -0.05em; font-weight: 300;
+    pointer-events: none; z-index: 1;
+  }
+  .cat-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 2; }
+  .cat-group {
+    display: grid; grid-template-columns: 220px 1fr; gap: 60px;
+    padding: 48px 0; border-top: 1px solid var(--rule-ink);
+  }
+  .cat-group:last-of-type { border-bottom: 1px solid var(--rule-ink); }
+  .cat-group .cat-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.35em; text-transform: uppercase;
+    color: var(--ox); position: sticky; top: 120px; align-self: start;
+    padding-top: 6px;
+  }
+  .cat-group .cat-list { display: flex; flex-direction: column; gap: 2px; }
+  .cat-item {
+    display: grid; grid-template-columns: 1fr auto; gap: 32px;
+    align-items: baseline; padding: 14px 0;
+    border-bottom: 1px dotted var(--rule-ink);
+    transition: padding .3s ease;
+  }
+  .cat-item:last-child { border-bottom: none; }
+  .cat-item:hover { padding-left: 8px; }
+  .cat-item .ci-title {
+    font-family: 'Fraunces', serif; font-style: italic;
+    font-size: 22px; color: var(--ink); font-weight: 400;
+    font-variation-settings: "opsz" 24, "SOFT" 50;
+  }
+  .cat-item .ci-sub {
+    display: block; font-family: 'EB Garamond', serif;
+    font-size: 15px; color: var(--gray); font-style: italic; margin-top: 2px;
+  }
+  .cat-item .ci-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--gray);
+  }
+
+  @media (max-width: 820px) {
+    .cat-group { grid-template-columns: 1fr; gap: 16px; }
+    .cat-group .cat-label { position: static; }
+    .cat-mark { font-size: 160px; top: 20px; }
+  }
+
+  /* ─── SHEET MUSIC FEATURE ──────────────────────── */
+  .sheets-feature {
+    background: var(--ink); color: var(--cream);
+    padding: 160px 48px; position: relative; overflow: hidden;
+  }
+  .sheets-feature::before {
+    content: ''; position: absolute; top: -40%; left: -10%; width: 500px; height: 500px;
+    border: 1px solid rgba(184, 135, 60, 0.15); border-radius: 50%;
+    pointer-events: none;
+  }
+  .sheets-feature::after {
+    content: ''; position: absolute; bottom: -30%; right: -8%; width: 400px; height: 400px;
+    border: 1px solid rgba(139, 38, 53, 0.2); border-radius: 50%;
     pointer-events: none;
   }
   .sheets-inner {
-    position: relative;
-    max-width: 1240px;
-    margin: 0 auto;
-    z-index: 2;
-    display: grid;
-    grid-template-columns: 1fr 1.3fr;
-    gap: 72px;
+    max-width: 1200px; margin: 0 auto; position: relative; z-index: 2;
+    display: grid; grid-template-columns: 1.3fr 1fr; gap: 100px;
     align-items: center;
   }
-  .sheets-copy .section-eyebrow { color: var(--gold); }
-  .sheets-copy .section-eyebrow::before { background: var(--gold); }
-  .sheets-copy h2 {
-    font-size: clamp(44px, 6vw, 72px);
-    font-style: italic;
-    line-height: 1.05;
-    letter-spacing: -0.02em;
-    color: var(--ivory);
-    margin-bottom: 28px;
-  }
-  .sheets-copy p {
-    font-size: 19px;
-    color: rgba(246, 241, 231, 0.78);
-    margin-bottom: 36px;
-    line-height: 1.75;
-    max-width: 460px;
-  }
-  .sheets-copy a.sheets-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    padding: 16px 32px;
+  .sheets-feature .label {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    background: var(--ivory);
-    color: var(--urtext);
-    transition: all .25s ease;
+    font-size: 11px; letter-spacing: 0.4em; text-transform: uppercase;
+    color: var(--ochre); margin-bottom: 32px; display: flex; align-items: center; gap: 14px;
   }
-  .sheets-copy a.sheets-cta:hover { background: var(--gold); color: var(--ink); }
-  .sheets-copy a.sheets-cta .arrow { transition: transform .25s ease; }
-  .sheets-copy a.sheets-cta:hover .arrow { transform: translateX(4px); }
+  .sheets-feature .label::before { content: ''; width: 36px; height: 1px; background: var(--ochre); }
+  .sheets-feature h2 {
+    font-size: clamp(48px, 6.5vw, 92px); font-style: italic; font-weight: 300;
+    line-height: 0.95; color: var(--cream); letter-spacing: -0.03em;
+    margin-bottom: 32px;
+    font-variation-settings: "opsz" 144, "SOFT" 100;
+  }
+  .sheets-feature h2 em { color: var(--ox); font-style: italic; }
+  .sheets-feature p {
+    font-family: 'Fraunces', serif; font-size: 22px; font-style: italic;
+    line-height: 1.5; color: rgba(242, 237, 226, 0.78);
+    max-width: 520px; margin-bottom: 44px;
+    font-variation-settings: "opsz" 24, "SOFT" 50;
+  }
+  .sheets-cta {
+    display: inline-flex; align-items: center; gap: 16px;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--cream); padding: 20px 36px;
+    border: 1px solid var(--cream); position: relative; overflow: hidden;
+  }
+  .sheets-cta::before {
+    content: ''; position: absolute; inset: 0; background: var(--ox);
+    transform: translateY(100%); transition: transform .4s cubic-bezier(.6,.1,.4,1); z-index: -1;
+  }
+  .sheets-cta:hover { border-color: var(--ox); }
+  .sheets-cta:hover::before { transform: translateY(0); }
+  .sheets-cta .arr { transition: transform .3s ease; }
+  .sheets-cta:hover .arr { transform: translateX(6px); }
 
-  .sheets-preview {
-    position: relative;
-    aspect-ratio: 7 / 9;
-    background: var(--ivory);
-    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
-    padding: 42px 36px;
-    overflow: hidden;
-    transform: rotate(-1.5deg);
+  .sheets-mock {
+    position: relative; aspect-ratio: 4 / 5;
+    transform: perspective(1200px) rotateY(-8deg) rotateX(3deg);
     transition: transform .5s ease;
   }
-  .sheets-preview:hover { transform: rotate(0deg) translateY(-4px); }
-  .sheets-preview::before {
-    content: '';
-    position: absolute;
-    top: 20px; bottom: 20px; left: 48%;
-    width: 1px;
-    background: rgba(0, 63, 114, 0.1);
+  .sheets-mock:hover { transform: perspective(1200px) rotateY(-4deg) rotateX(0deg); }
+  .sheets-mock .page {
+    position: absolute; inset: 0; background: var(--cream);
+    padding: 44px 36px; box-shadow: 0 40px 100px rgba(0,0,0,0.5);
   }
-  .sheets-preview-head {
+  .sheets-mock .page .op {
     text-align: center;
-    color: var(--urtext);
-    border-bottom: 2px solid var(--urtext);
-    padding-bottom: 12px;
-    margin-bottom: 24px;
-  }
-  .sheets-preview-head .sheets-op {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 0.4em;
-    text-transform: uppercase;
-    margin-bottom: 6px;
+    font-size: 9px; letter-spacing: 0.4em; text-transform: uppercase;
+    color: var(--ochre); margin-bottom: 8px;
   }
-  .sheets-preview-head .sheets-title {
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-size: 22px;
-    line-height: 1.1;
+  .sheets-mock .page .ttl {
+    text-align: center; font-family: 'Fraunces', serif;
+    font-style: italic; font-size: 32px; line-height: 1; color: var(--ox);
+    margin-bottom: 6px; letter-spacing: -0.02em;
   }
-  .sheets-preview-staff {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 20px;
+  .sheets-mock .page .by {
+    text-align: center; font-family: 'JetBrains Mono', monospace;
+    font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--gray); margin-bottom: 32px;
+    padding-bottom: 20px; border-bottom: 1px solid var(--ox);
   }
-  .sheets-preview-staff .staff-line {
-    height: 1px;
-    background: var(--ink);
-    opacity: 0.4;
-  }
-  .sheets-preview-staff .staff-group {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    padding: 10px 0;
-    border-bottom: 1px solid rgba(0, 63, 114, 0.08);
-  }
-  .sheets-preview .corner-fold {
-    position: absolute;
-    top: 0; right: 0;
-    width: 48px; height: 48px;
-    background: linear-gradient(225deg, var(--ivory) 50%, var(--ivory-deep) 50%);
-    box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.1);
+  .sheets-mock .staff { margin-bottom: 20px; }
+  .sheets-mock .staff div { height: 1px; background: var(--ink); opacity: 0.45; margin: 2.5px 0; }
+  .sheets-mock .page .fold {
+    position: absolute; top: 0; right: 0; width: 54px; height: 54px;
+    background: linear-gradient(225deg, var(--cream-deep) 50%, var(--gray-mute) 50%);
   }
 
-  @media (max-width: 900px) {
-    .sheets-inner { grid-template-columns: 1fr; gap: 48px; }
-    .sheets-preview { max-width: 360px; margin: 0 auto; width: 100%; }
-  }
+  @media (max-width: 900px) { .sheets-inner { grid-template-columns: 1fr; gap: 60px; } .sheets-mock { max-width: 300px; margin: 0 auto; } }
 
-  /* ---------- Listen / Spotify ---------- */
-  .listen-block {
-    background: var(--ivory-soft);
-    border-bottom: 1px solid var(--rule-light);
-    padding: 100px 36px;
-  }
-  .listen-inner {
-    max-width: 1000px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  .listen-inner .section-eyebrow { justify-content: center; margin-bottom: 20px; }
-  .listen-inner .section-eyebrow::before { display: none; }
-  .listen-inner h2 {
-    font-size: clamp(36px, 4.5vw, 48px);
-    font-style: italic;
-    color: var(--urtext);
-    margin-bottom: 20px;
-  }
-  .listen-inner p {
-    color: var(--ink-soft);
-    margin-bottom: 40px;
-    font-size: 18px;
-    line-height: 1.75;
-    max-width: 640px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .spotify-embed {
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 20px 60px rgba(0, 63, 114, 0.12);
-    border: 1px solid var(--rule-light);
-  }
-
-  /* ---------- Quote break ---------- */
-  .section-break {
-    position: relative;
-    min-height: 70vh;
-    background:
-      linear-gradient(180deg, rgba(0, 44, 80, 0.78) 0%, rgba(0, 63, 114, 0.72) 100%),
-      url('assets/workspace-wide.jpg') center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0 36px;
-    color: var(--ivory);
-  }
-  .section-break blockquote {
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-size: clamp(32px, 4.5vw, 52px);
-    line-height: 1.25;
-    color: var(--ivory);
-    max-width: 820px;
-    position: relative;
-    font-variation-settings: "opsz" 144;
-  }
-  .section-break blockquote::before {
-    content: '“';
-    position: absolute;
-    top: -48px; left: 50%;
-    transform: translateX(-50%);
-    font-size: 120px;
-    color: var(--gold);
-    line-height: 1;
-    opacity: 0.6;
-  }
-  .section-break cite {
-    display: block;
-    margin-top: 32px;
-    font-style: normal;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--gold);
-  }
-
-  /* ---------- About ---------- */
-  #about {
-    background: var(--ivory);
-    padding: 140px 36px;
-    border-bottom: 1px solid var(--rule-light);
+  /* ─── ABOUT ────────────────────────────────────── */
+  .about {
+    background: var(--cream); padding: 160px 48px; position: relative;
   }
   .about-inner {
-    max-width: 1240px;
-    margin: 0 auto;
+    max-width: 980px; margin: 0 auto;
+    display: grid; grid-template-columns: 160px 1fr; gap: 60px;
   }
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.3fr;
-    gap: 80px;
-    align-items: start;
+  .about-side {
+    position: sticky; top: 140px; align-self: start;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 0.35em; text-transform: uppercase;
+    color: var(--ox);
   }
-  .about-image {
-    aspect-ratio: 4 / 5;
-    background: url('assets/portrait-formal-alt.jpg') center/cover no-repeat;
-    position: relative;
+  .about-side .big {
+    display: block; font-family: 'Fraunces', serif;
+    font-size: 72px; line-height: 0.9; color: var(--ink);
+    font-style: italic; font-weight: 300; text-transform: none;
+    letter-spacing: -0.02em; margin-bottom: 20px;
+    font-variation-settings: "opsz" 144, "SOFT" 100;
   }
-  .about-image::after {
-    content: '';
-    position: absolute;
-    inset: 12px -12px -12px 12px;
-    border: 1px solid var(--urtext);
-    opacity: 0.4;
-    z-index: -1;
-  }
-  .about-copy h2 {
-    font-size: clamp(44px, 6vw, 68px);
-    font-style: italic;
-    color: var(--urtext);
-    margin-bottom: 36px;
-    line-height: 1.05;
-  }
-  .about-copy p {
-    margin-bottom: 22px;
-    color: var(--ink-soft);
-    font-size: 18px;
-    line-height: 1.8;
-  }
-  .about-copy p:first-of-type::first-letter {
+  .about-text p {
     font-family: 'Fraunces', serif;
-    font-size: 68px;
-    float: left;
-    line-height: 0.9;
-    margin: 8px 14px 0 0;
-    color: var(--urtext);
-    font-style: italic;
-    font-variation-settings: "opsz" 144;
+    font-size: clamp(22px, 2.4vw, 30px); line-height: 1.45;
+    font-weight: 300; color: var(--ink-soft);
+    margin-bottom: 1.2em; letter-spacing: -0.01em;
+    font-variation-settings: "opsz" 32, "SOFT" 50;
   }
-  .currently-note {
-    margin-top: 36px;
-    padding: 24px 28px;
-    background: var(--ivory-soft);
-    border-left: 2px solid var(--gold);
-    font-style: italic;
-    color: var(--ink-soft);
-    font-size: 17px;
-    line-height: 1.7;
+  .about-text p em { color: var(--ox); font-style: italic; }
+  .about-text p:first-child::first-letter {
+    font-family: 'Fraunces', serif;
+    font-size: 5em; float: left; line-height: 0.85; padding-right: 14px;
+    padding-top: 6px; color: var(--ox); font-style: italic; font-weight: 400;
+    font-variation-settings: "opsz" 144, "SOFT" 100;
   }
-  .currently-note .mono {
+
+  @media (max-width: 820px) { .about-inner { grid-template-columns: 1fr; gap: 24px; } .about-side { position: static; } }
+
+  /* ─── BEYOND (performance / studio) ───────────── */
+  .beyond {
+    background: var(--cream-deep); padding: 140px 48px;
+  }
+  .beyond-inner { max-width: 1200px; margin: 0 auto; }
+  .beyond-head {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--urtext);
-    font-style: normal;
-    display: block;
-    margin-bottom: 8px;
+    font-size: 11px; letter-spacing: 0.4em; text-transform: uppercase;
+    color: var(--ox); margin-bottom: 60px;
+    display: flex; align-items: center; gap: 14px;
   }
-
-  @media (max-width: 900px) {
-    .about-grid { grid-template-columns: 1fr; gap: 48px; }
-    .about-image { aspect-ratio: 3 / 4; max-width: 420px; margin: 0 auto; width: 100%; }
+  .beyond-head::before { content: ''; width: 36px; height: 1px; background: var(--ox); }
+  .beyond-row {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 48px;
   }
-
-  /* ---------- Performance ---------- */
-  #performance {
-    background: var(--urtext);
-    color: var(--ivory);
-    padding: 140px 36px;
-    position: relative;
-    overflow: hidden;
+  .beyond-card {
+    padding: 56px 48px; background: var(--cream-soft);
+    border: 1px solid var(--rule-ink);
+    display: flex; flex-direction: column; justify-content: space-between;
+    min-height: 320px; transition: all .3s ease;
+    position: relative; overflow: hidden;
   }
-  #performance::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse at 70% 30%, rgba(30, 90, 142, 0.45) 0%, transparent 60%);
-    pointer-events: none;
+  .beyond-card:hover { border-color: var(--ox); transform: translateY(-4px); }
+  .beyond-card .bc-mark {
+    font-family: 'Fraunces', serif; font-style: italic;
+    font-size: 120px; line-height: 0.9; color: rgba(139, 38, 53, 0.08);
+    position: absolute; top: 24px; right: 32px;
+    font-variation-settings: "opsz" 144, "SOFT" 100;
   }
-  .performance-inner {
-    position: relative;
-    z-index: 2;
-    max-width: 1240px;
-    margin: 0 auto;
+  .beyond-card h3 {
+    font-size: 44px; font-style: italic; font-weight: 300;
+    line-height: 1; color: var(--ink); margin-bottom: 20px;
+    letter-spacing: -0.02em; position: relative;
+    font-variation-settings: "opsz" 72, "SOFT" 100;
   }
-  .performance-header {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 72px;
-    margin-bottom: 72px;
-    align-items: end;
+  .beyond-card p {
+    font-family: 'EB Garamond', serif; font-style: italic;
+    font-size: 18px; line-height: 1.55; color: var(--gray);
+    margin-bottom: 32px; position: relative;
   }
-  .performance-header h2 {
-    font-size: clamp(44px, 6vw, 72px);
-    font-style: italic;
-    color: var(--ivory);
-    line-height: 1.05;
-  }
-  .performance-header p {
-    font-size: 19px;
-    color: rgba(246, 241, 231, 0.78);
-    line-height: 1.75;
-  }
-  .performance-header .section-eyebrow { color: var(--gold); }
-  .performance-header .section-eyebrow::before { background: var(--gold); }
-
-  .doors {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
-    background: rgba(246, 241, 231, 0.14);
-    border: 1px solid rgba(246, 241, 231, 0.14);
-  }
-  .door {
-    background: var(--urtext);
-    padding: 48px 40px;
-    transition: background .3s ease;
-    position: relative;
-  }
-  .door:hover { background: var(--urtext-deep); }
-  .door .door-num {
+  .beyond-card .bc-link {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.3em;
-    color: var(--gold);
-    margin-bottom: 20px;
-  }
-  .door h3 {
-    font-size: 26px;
-    font-style: italic;
-    margin-bottom: 16px;
-    color: var(--ivory);
-    line-height: 1.2;
-  }
-  .door p {
-    color: rgba(246, 241, 231, 0.75);
-    font-size: 16px;
-    line-height: 1.7;
-  }
-
-  @media (max-width: 900px) {
-    .performance-header { grid-template-columns: 1fr; gap: 24px; }
-    .doors { grid-template-columns: 1fr; }
-  }
-
-  /* ---------- Studio ---------- */
-  #studio {
-    background: var(--ivory);
-    padding: 140px 36px;
-    border-bottom: 1px solid var(--rule-light);
-  }
-  .studio-inner { max-width: 1240px; margin: 0 auto; }
-  .studio-intro {
-    max-width: 720px;
-    margin: 0 auto 72px;
-    text-align: center;
-  }
-  .studio-intro .section-eyebrow { justify-content: center; }
-  .studio-intro .section-eyebrow::before { display: none; }
-  .studio-intro h2 {
-    font-size: clamp(44px, 6vw, 68px);
-    font-style: italic;
-    color: var(--urtext);
-    margin: 20px 0 24px;
-    line-height: 1.05;
-  }
-  .studio-intro p {
-    color: var(--ink-soft);
-    font-size: 19px;
-    line-height: 1.75;
-  }
-
-  .pamphlet-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 24px;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  .pamphlet-card {
-    background: var(--ivory-soft);
-    border: 1px solid var(--rule-light);
-    padding: 44px 40px;
+    font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--ox); display: inline-flex; align-items: center; gap: 12px;
     position: relative;
-    transition: all .3s ease;
   }
-  .pamphlet-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--urtext);
-    box-shadow: 0 20px 60px rgba(0, 63, 114, 0.12);
+  .beyond-card .bc-link:hover { gap: 20px; }
+  @media (max-width: 820px) { .beyond-row { grid-template-columns: 1fr; } }
+
+  /* ─── CONTACT ─────────────────────────────────── */
+  .contact {
+    background: var(--ink); color: var(--cream);
+    padding: 160px 48px 100px; position: relative; overflow: hidden;
   }
-  .pamphlet-card .pamphlet-label {
+  .contact-mark {
+    position: absolute; left: -5%; top: 10%;
+    font-family: 'Fraunces', serif; font-style: italic;
+    font-size: clamp(200px, 30vw, 420px); line-height: 0.9;
+    color: rgba(139, 38, 53, 0.08); letter-spacing: -0.05em;
+    pointer-events: none; z-index: 1; font-weight: 300;
+  }
+  .contact-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 2; }
+  .contact .label {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--urtext);
-    margin-bottom: 18px;
+    font-size: 11px; letter-spacing: 0.4em; text-transform: uppercase;
+    color: var(--ochre); margin-bottom: 36px;
+    display: flex; align-items: center; gap: 14px;
   }
-  .pamphlet-card h3 {
-    font-size: 26px;
-    font-style: italic;
-    margin-bottom: 10px;
-    line-height: 1.2;
-    color: var(--ink);
-  }
-  .pamphlet-card .pamphlet-meta {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--ink-mute);
-    margin-bottom: 28px;
-  }
-  .pamphlet-card .pamphlet-download {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    padding: 13px 26px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    background: var(--urtext);
-    color: var(--ivory);
-    transition: all .25s ease;
-  }
-  .pamphlet-card .pamphlet-download:hover { background: var(--urtext-deep); gap: 16px; }
-
-  /* ---------- Manuscript strip ---------- */
-  .manuscript-strip {
-    background: var(--ivory-deep);
-    padding: 80px 36px;
-  }
-  .manuscript-grid {
-    max-width: 1240px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-  }
-  .manuscript-grid div {
-    aspect-ratio: 1 / 1;
-    background-size: cover;
-    background-position: center;
-    filter: saturate(0.85) sepia(0.08);
-    transition: filter .3s ease, transform .3s ease;
-  }
-  .manuscript-grid div:hover {
-    filter: saturate(1) sepia(0);
-    transform: scale(1.02);
-  }
-  .ms-1 { background-image: url('assets/manuscript.jpg'); }
-  .ms-2 { background-image: url('assets/pencil-staff.jpg'); }
-  .ms-3 { background-image: url('assets/hands-closeup.jpg'); }
-  .ms-4 { background-image: url('assets/revision-1.jpg'); }
-  @media (max-width: 700px) {
-    .manuscript-grid { grid-template-columns: repeat(2, 1fr); }
-  }
-
-  /* ---------- Contact ---------- */
-  #contact {
-    background: var(--ink);
-    color: var(--ivory);
-    padding: 140px 36px;
-    position: relative;
-    overflow: hidden;
-  }
-  #contact::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse at 50% 100%, rgba(0, 63, 114, 0.3) 0%, transparent 60%);
-    pointer-events: none;
-  }
-  .contact-inner {
-    position: relative;
-    z-index: 2;
-    max-width: 1240px;
-    margin: 0 auto;
-  }
-  .contact-head {
-    text-align: center;
-    margin-bottom: 72px;
-  }
-  .contact-head .section-eyebrow { justify-content: center; color: var(--gold); }
-  .contact-head .section-eyebrow::before { background: var(--gold); display: none; }
-  .contact-head h2 {
-    font-size: clamp(44px, 6vw, 72px);
-    font-style: italic;
-    color: var(--ivory);
-    margin: 20px 0 20px;
-    line-height: 1.05;
-  }
-  .contact-head p {
-    color: rgba(246, 241, 231, 0.72);
-    font-size: 18px;
-    line-height: 1.7;
-    max-width: 560px;
-    margin: 0 auto;
-  }
-
-  .contact-doors {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2px;
-    background: rgba(246, 241, 231, 0.14);
-    border: 1px solid rgba(246, 241, 231, 0.14);
-    margin-bottom: 72px;
-  }
-  .contact-doors .door {
-    background: var(--ink);
-    padding: 44px 36px;
-  }
-  .contact-doors .door:hover { background: #171C22; }
-
-  .contact-info {
-    text-align: center;
+  .contact .label::before { content: ''; width: 36px; height: 1px; background: var(--ochre); }
+  .contact h2 {
+    font-size: clamp(60px, 10vw, 160px); font-style: italic; font-weight: 300;
+    line-height: 0.9; letter-spacing: -0.04em; color: var(--cream);
     margin-bottom: 56px;
-    color: rgba(246, 241, 231, 0.9);
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 14px;
-    letter-spacing: 0.1em;
-    line-height: 2;
+    font-variation-settings: "opsz" 144, "SOFT" 100;
   }
-  .contact-info a { color: var(--gold); }
-  .contact-info a:hover { color: var(--ivory); }
-
-  .contact-form {
-    max-width: 640px;
-    margin: 0 auto;
-    background: var(--urtext-deep);
-    padding: 52px 44px;
-    border: 1px solid rgba(246, 241, 231, 0.14);
+  .contact h2 em { color: var(--ox); font-style: italic; }
+  .contact-email {
+    display: inline-block; padding: 24px 0; margin-top: 20px;
+    font-family: 'Fraunces', serif; font-style: italic;
+    font-size: clamp(28px, 4vw, 48px); font-weight: 400;
+    color: var(--cream); border-bottom: 1px solid rgba(242, 237, 226, 0.3);
+    letter-spacing: -0.015em;
+    font-variation-settings: "opsz" 48, "SOFT" 100;
   }
-  .contact-form h3 {
-    font-size: 28px;
-    font-style: italic;
-    margin-bottom: 32px;
-    text-align: center;
-    color: var(--ivory);
-  }
-  .contact-form label {
-    display: block;
-    margin-bottom: 8px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: rgba(246, 241, 231, 0.72);
-  }
-  .contact-form input,
-  .contact-form textarea {
-    width: 100%;
-    padding: 14px 16px;
-    margin-bottom: 24px;
-    background: rgba(246, 241, 231, 0.06);
-    border: 1px solid rgba(246, 241, 231, 0.2);
-    font-family: 'EB Garamond', serif;
-    font-size: 16px;
-    color: var(--ivory);
-    transition: border-color .2s ease, background .2s ease;
-  }
-  .contact-form input:focus,
-  .contact-form textarea:focus {
-    outline: none;
-    border-color: var(--gold);
-    background: rgba(246, 241, 231, 0.1);
-  }
-  .contact-form textarea { min-height: 140px; resize: vertical; }
-  .contact-form button {
-    width: 100%;
-    padding: 16px;
-    background: var(--ivory);
-    color: var(--urtext);
-    border: none;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all .25s ease;
-  }
-  .contact-form button:hover { background: var(--gold); color: var(--ink); }
-  .form-status {
-    text-align: center;
-    margin-top: 16px;
-    font-size: 13px;
-    color: var(--gold);
-    min-height: 20px;
-    font-family: 'JetBrains Mono', monospace;
-    letter-spacing: 0.1em;
+  .contact-email:hover { color: var(--ox); border-color: var(--ox); }
+  .contact-aside {
+    margin-top: 60px; max-width: 480px;
+    font-family: 'EB Garamond', serif; font-style: italic;
+    font-size: 19px; line-height: 1.6; color: rgba(242, 237, 226, 0.65);
   }
 
-  /* ---------- Footer ---------- */
+  /* ─── FOOTER ───────────────────────────────────── */
   footer {
-    background: #060709;
-    color: rgba(246, 241, 231, 0.7);
-    padding: 56px 36px 44px;
-    text-align: center;
+    background: #06060A; color: rgba(242, 237, 226, 0.6);
+    padding: 60px 48px 44px; text-align: center;
   }
-  .footer-inner { max-width: 1240px; margin: 0 auto; }
   .footer-brand {
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-size: 24px;
-    color: var(--ivory);
-    margin-bottom: 20px;
+    font-family: 'Fraunces', serif; font-style: italic; font-size: 24px;
+    color: var(--cream); margin-bottom: 16px;
+    font-variation-settings: "opsz" 48, "SOFT" 100;
   }
   footer .footer-tag {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: rgba(246, 241, 231, 0.5);
-    margin-bottom: 36px;
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    letter-spacing: 0.35em; text-transform: uppercase;
+    color: rgba(242, 237, 226, 0.4); margin-bottom: 32px;
   }
   footer .footer-links {
-    display: flex;
-    justify-content: center;
-    gap: 32px;
-    flex-wrap: wrap;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    margin-bottom: 24px;
+    display: flex; justify-content: center; gap: 32px; flex-wrap: wrap;
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    letter-spacing: 0.3em; text-transform: uppercase; margin-bottom: 28px;
   }
-  footer .footer-links a { color: rgba(246, 241, 231, 0.6); }
-  footer .footer-links a:hover { color: var(--gold); }
-  footer .copy {
-    font-size: 12px;
-    color: rgba(246, 241, 231, 0.35);
-    font-family: 'JetBrains Mono', monospace;
-    letter-spacing: 0.15em;
-  }
+  footer .footer-links a { color: rgba(242, 237, 226, 0.5); }
+  footer .footer-links a:hover { color: var(--ochre); }
+  footer .copy { font-size: 11px; color: rgba(242, 237, 226, 0.3); font-family: 'JetBrains Mono', monospace; letter-spacing: 0.2em; }
 
-  /* ---------- Scroll reveals ---------- */
-  .reveal {
-    opacity: 0;
-    transform: translateY(32px);
-    transition: opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1);
-  }
-  .reveal.in {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  /* ─── REVEAL ───────────────────────────────────── */
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1); }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+  .reveal-fade { opacity: 0; transition: opacity 1.4s ease; }
+  .reveal-fade.in { opacity: 1; }
 
   @media (max-width: 700px) {
-    .nav-links { gap: 16px; }
-    .nav-links a { font-size: 10px; letter-spacing: 0.18em; }
-    .nav-container { padding: 0 20px; }
-    section, .release-block, .catalog-block, .opus-index, .sheets-block { padding: 80px 20px; }
-    header.hero { padding: 100px 20px 60px; }
-    .contact-doors { grid-template-columns: 1fr; }
+    .nav-links { gap: 14px; }
+    .nav-links a { font-size: 9px; letter-spacing: 0.18em; }
+    .nav-wrap { padding: 0 20px; }
+    .hero { padding: 100px 20px 80px; }
+    .scroll-mark { left: 20px; }
+    .opener, .opus-section, .releases, .catalog, .sheets-feature, .about, .beyond, .contact { padding-left: 20px; padding-right: 20px; }
+    .opener-inner { grid-template-columns: 1fr; gap: 40px; }
+    .opener-mark { position: static; }
+    .section-head { margin-bottom: 60px; }
+    .release-card { padding: 32px 24px; }
+    .beyond-card { padding: 40px 28px; min-height: auto; }
   }
 </style>
 </head>
 <body>
 
 <nav id="nav">
-  <div class="nav-container">
-    <a href="#top" class="brand">Andrew Trotter<span class="brand-opus">MMXXVI</span></a>
+  <div class="nav-wrap">
+    <a href="index.html" class="brand"><span class="dot"></span>Andrew Trotter</a>
     <ul class="nav-links">
+      <li><a href="#opus">Opus</a></li>
       <li><a href="#catalog">Catalog</a></li>
-      <li><a href="sheet-music.html">Sheet Music</a></li>
+      <li><a href="sheet-music.html">Scores</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="#performance">Performance</a></li>
-      <li><a href="#studio">Studio</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
 </nav>
 
-<header class="hero" id="top">
+<!-- ─── HERO ─────────────────────── -->
+<section class="hero">
   <div class="hero-grain"></div>
+  <div class="hero-gestures" aria-hidden="true">
+    <svg class="g1" viewBox="0 0 400 100" fill="none">
+      <path d="M0 50 Q 80 10, 180 50 T 400 50" stroke="#F2EDE2" stroke-width="1.2" fill="none"/>
+      <path d="M0 54 Q 80 14, 180 54 T 400 54" stroke="#F2EDE2" stroke-width="0.6" fill="none" opacity="0.5"/>
+      <path d="M20 70 Q 100 100, 220 70 T 390 60" stroke="#B8873C" stroke-width="0.8" fill="none"/>
+    </svg>
+    <svg class="g2" viewBox="0 0 400 120" fill="none">
+      <line x1="0" y1="20" x2="400" y2="20" stroke="#F2EDE2" stroke-width="0.5"/>
+      <line x1="0" y1="30" x2="400" y2="30" stroke="#F2EDE2" stroke-width="0.5"/>
+      <line x1="0" y1="40" x2="400" y2="40" stroke="#F2EDE2" stroke-width="0.5"/>
+      <line x1="0" y1="50" x2="400" y2="50" stroke="#F2EDE2" stroke-width="0.5"/>
+      <line x1="0" y1="60" x2="400" y2="60" stroke="#F2EDE2" stroke-width="0.5"/>
+      <path d="M30 35 Q 110 10, 190 42 T 370 38" stroke="#8B2635" stroke-width="1.4" fill="none"/>
+    </svg>
+    <svg class="g3" viewBox="0 0 180 60" fill="none">
+      <path d="M10 30 L 170 30" stroke="#F2EDE2" stroke-width="0.5"/>
+      <path d="M30 20 Q 70 5, 110 25 T 160 30" stroke="#F2EDE2" stroke-width="1" fill="none"/>
+    </svg>
+    <svg class="g4" viewBox="0 0 240 60" fill="none">
+      <path d="M0 30 Q 60 50, 120 25 T 240 30" stroke="#B8873C" stroke-width="1" fill="none"/>
+    </svg>
+  </div>
+
   <div class="hero-inner">
-    <div class="hero-copy">
-      <div class="hero-eyebrow">Composer · Pianist · MMXXVI</div>
-      <h1>Andrew <span class="amp">&amp;</span><br>Trotter</h1>
-      <div class="hero-tagline">
-        Symphony<span class="sep">·</span>Ballet<span class="sep">·</span>Quartet<span class="sep">·</span>Piano
-      </div>
-      <div class="hero-ctas">
-        <a href="#passiontide" class="primary">Hear Passiontide <span class="arrow">→</span></a>
-        <a href="sheet-music.html">Sheet Music <span class="arrow">→</span></a>
+    <div class="hero-eyebrow">Composer &middot; Pianist &middot; Suwanee</div>
+    <h1 class="hero-title">
+      <span class="first">Andrew</span>
+      <span class="last">Trotter<span class="amp">.</span></span>
+    </h1>
+    <div class="hero-meta">
+      <p class="hero-tag">A hundred pieces so far. Still at the piano, still writing — orchestral, chamber, piano, and the quiet work in between.</p>
+      <div class="hero-stats">
+        <div class="stat"><strong>VIII</strong>Opus Numbers</div>
+        <div class="stat"><strong>MMXXVI</strong>Current Year</div>
       </div>
     </div>
-    <div class="hero-portrait">
-      <div class="hero-portrait-caption mono">Portrait · 2026</div>
-    </div>
   </div>
-  <div class="hero-footer">
-    <div>Suwanee, Georgia</div>
-    <div class="scroll-cue">Scroll</div>
-    <div>Est. MMXXIII</div>
-  </div>
-</header>
 
-<!-- ---------- Selected Works ---------- -->
-<section class="opus-index">
+  <div class="scroll-mark"><span class="line"></span>Scroll</div>
+</section>
+
+<!-- ─── OPENING ─────────────────────── -->
+<section class="opener">
+  <div class="opener-inner">
+    <div class="opener-mark reveal">
+      <span class="num">i.</span>
+      The Composer
+    </div>
+    <div class="opener-text reveal">
+      <p>A piano at the window. A page half-written. The <em>distance</em> between what the score shows and what the hand is reaching for — that's where the work lives.</p>
+      <p>I write for the room before I write for the archive. Pieces that want to be <em>heard</em>, not catalogued.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── OPUS INDEX ──────────────────── -->
+<section id="opus" class="opus-section">
   <div class="opus-inner">
-    <div class="opus-header reveal">
-      <div>
-        <div class="section-eyebrow">Selected Works</div>
-        <h2>Eight opus numbers<br>so far.</h2>
-      </div>
-      <p>Orchestral, chamber, and solo piano writing. The four below are current anchors in the catalog.</p>
+    <div class="section-head reveal">
+      <div class="label">The Opus Index</div>
+      <h2>Eight opus numbers,<br>so far.</h2>
+      <div class="side-note">Additional albums, singles, cycles, sacred collections.</div>
     </div>
-    <div class="opus-grid reveal">
-      <div class="opus-cell">
-        <div class="opus-roman">III<span class="num">OP·3</span></div>
-        <div class="opus-title">Symphony No. 1<br>„Messiah"</div>
-        <div class="opus-meta">Orchestra · 3 Mvts</div>
+
+    <div class="opus-stream">
+      <article class="opus-entry reveal">
+        <div class="opus-no">III</div>
+        <div class="opus-work">
+          <div class="title">Symphony No. 1 &mdash; "Messiah"</div>
+          <div class="sub">Three movements for orchestra</div>
+        </div>
+        <div class="opus-meta">
+          <div class="year">MMXXVI</div>
+          <div class="state">Published</div>
+        </div>
+      </article>
+
+      <article class="opus-entry reveal">
+        <div class="opus-no">VI</div>
+        <div class="opus-work">
+          <div class="title">The Silver Swan</div>
+          <div class="sub">Ballet in four acts &mdash; twenty-two movements for orchestra</div>
+        </div>
+        <div class="opus-meta">
+          <div class="year">MMXXVI</div>
+          <div class="state">Published</div>
+        </div>
+      </article>
+
+      <article class="opus-entry reveal">
+        <div class="opus-no">VII</div>
+        <div class="opus-work">
+          <div class="title">String Quartet No. 3</div>
+          <div class="sub">Visione &middot; Riflesso &middot; Scintille &middot; Dal silenzio, luce</div>
+        </div>
+        <div class="opus-meta">
+          <div class="year">MMXXVI</div>
+          <div class="state">Engraving</div>
+        </div>
+      </article>
+
+      <article class="opus-entry reveal">
+        <div class="opus-no">VIII</div>
+        <div class="opus-work">
+          <div class="title">Vision Fugitives</div>
+          <div class="sub">Twenty-four pieces for solo piano &mdash; half-remembered dreams, each starting mid-scene</div>
+        </div>
+        <div class="opus-meta">
+          <div class="year">MMXXVI</div>
+          <div class="state wip">In Progress</div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ─── RELEASES ────────────────────── -->
+<section class="releases">
+  <div class="releases-inner">
+    <div class="section-head reveal" style="border-color: var(--rule-ink);">
+      <div class="label" style="color: var(--ox);"><span style="background: var(--ox); width: 36px; height: 1px; display: inline-block;"></span>Recent Releases</div>
+      <h2 style="color: var(--ink); font-family: 'Fraunces', serif;">On the record.</h2>
+      <div class="side-note" style="color: var(--gray);">Streaming on Spotify, Apple Music, and the usual channels.</div>
+    </div>
+
+    <div class="release-row">
+      <article class="release-card reveal">
+        <div class="rel-label">Album &middot; MMXXVI</div>
+        <h3>Ricordi</h3>
+        <div class="rel-sub">Seven neoclassical pieces for solo piano.</div>
+        <div class="rel-tracks">
+          <div class="trk"><span><span class="n">01</span>Ricordi</span></div>
+          <div class="trk"><span><span class="n">02</span>Chiari di luna</span></div>
+          <div class="trk"><span><span class="n">03</span>Dolce vita</span></div>
+          <div class="trk"><span><span class="n">04</span>Nel silenzio</span></div>
+          <div class="trk"><span><span class="n">05</span>Primo amore</span></div>
+          <div class="trk"><span><span class="n">06</span>Ultimo respiro</span></div>
+          <div class="trk"><span><span class="n">07</span>Lontano</span></div>
+        </div>
+        <a class="rel-link" href="https://open.spotify.com/album/3i5WGzVxEV7iNmnPtWLtPu" target="_blank" rel="noopener">Listen on Spotify &rarr;</a>
+      </article>
+
+      <article class="release-card reveal">
+        <div class="rel-label">Album &middot; MMXXVI</div>
+        <h3>Passiontide</h3>
+        <div class="rel-sub">Sacred music for Holy Week.</div>
+        <div class="rel-tracks">
+          <div class="trk"><span><span class="n">01</span>All For My Lord</span></div>
+          <div class="trk"><span><span class="n">02</span>At the Garden</span></div>
+          <div class="trk"><span><span class="n">03</span>The Hour</span></div>
+          <div class="trk"><span><span class="n">04</span>Via Dolorosa</span></div>
+          <div class="trk"><span><span class="n">05</span>At the Foot</span></div>
+          <div class="trk"><span><span class="n">06</span>Silent Tomb</span></div>
+          <div class="trk"><span><span class="n">07</span>He is Risen</span></div>
+        </div>
+        <a class="rel-link" href="#catalog">Explore the catalog &rarr;</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CATALOG ─────────────────────── -->
+<section id="catalog" class="catalog">
+  <div class="cat-mark">&amp;</div>
+  <div class="cat-inner">
+    <div class="section-head reveal" style="border-color: var(--rule-ink);">
+      <div class="label" style="color: var(--ox);"><span style="background: var(--ox); width: 36px; height: 1px; display: inline-block;"></span>The Catalog</div>
+      <h2 style="color: var(--ink);">Grouped by<br>instrumentation.</h2>
+      <div class="side-note" style="color: var(--gray);">The principal works, by medium.</div>
+    </div>
+
+    <div class="cat-group reveal">
+      <div class="cat-label">Orchestral</div>
+      <div class="cat-list">
+        <div class="cat-item">
+          <div><span class="ci-title">Symphony No. 1 &mdash; "Messiah"</span><span class="ci-sub">Three movements &middot; Op. III</span></div>
+          <div class="ci-meta">MMXXVI</div>
+        </div>
+        <div class="cat-item">
+          <div><span class="ci-title">All For My Lord</span><span class="ci-sub">Sacred orchestral collection</span></div>
+          <div class="ci-meta">MMXXVI</div>
+        </div>
       </div>
-      <div class="opus-cell">
-        <div class="opus-roman">VI<span class="num">OP·6</span></div>
-        <div class="opus-title">The Silver Swan</div>
-        <div class="opus-meta">Ballet · 4 Acts</div>
+    </div>
+
+    <div class="cat-group reveal">
+      <div class="cat-label">Ballet</div>
+      <div class="cat-list">
+        <div class="cat-item">
+          <div><span class="ci-title">The Silver Swan</span><span class="ci-sub">Four acts &middot; twenty-two movements &middot; Op. VI</span></div>
+          <div class="ci-meta">MMXXVI</div>
+        </div>
       </div>
-      <div class="opus-cell current">
-        <div class="opus-roman">VII<span class="num">OP·7</span></div>
-        <div class="opus-title">String Quartet No. 3</div>
-        <div class="opus-meta">In Engraving · 2026</div>
+    </div>
+
+    <div class="cat-group reveal">
+      <div class="cat-label">Chamber</div>
+      <div class="cat-list">
+        <div class="cat-item">
+          <div><span class="ci-title">String Quartet No. 3</span><span class="ci-sub">Four movements &middot; Op. VII</span></div>
+          <div class="ci-meta">MMXXVI</div>
+        </div>
       </div>
-      <div class="opus-cell">
-        <div class="opus-roman">VIII<span class="num">OP·8</span></div>
-        <div class="opus-title">Vision Fugitives</div>
-        <div class="opus-meta">Piano · 24 Pieces</div>
+    </div>
+
+    <div class="cat-group reveal">
+      <div class="cat-label">Solo Piano</div>
+      <div class="cat-list">
+        <div class="cat-item">
+          <div><span class="ci-title">Vision Fugitives</span><span class="ci-sub">Twenty-four pieces &middot; Op. VIII &middot; in progress</span></div>
+          <div class="ci-meta">MMXXVI</div>
+        </div>
+        <div class="cat-item">
+          <div><span class="ci-title">Ricordi</span><span class="ci-sub">Seven-piece album</span></div>
+          <div class="ci-meta">MMXXVI</div>
+        </div>
+        <div class="cat-item">
+          <div><span class="ci-title">Piano, Vol. 1</span><span class="ci-sub">Solo piano collection</span></div>
+          <div class="ci-meta">&mdash;</div>
+        </div>
+        <div class="cat-item">
+          <div><span class="ci-title">Danza di primavera</span><span class="ci-sub">Single</span></div>
+          <div class="ci-meta">MMXXVI</div>
+        </div>
+        <div class="cat-item">
+          <div><span class="ci-title">Ninna nanna</span><span class="ci-sub">Single</span></div>
+          <div class="ci-meta">MMXXVI</div>
+        </div>
+        <div class="cat-item">
+          <div><span class="ci-title">Liebesträume No. 2</span><span class="ci-sub">Single</span></div>
+          <div class="ci-meta">MMXXIV</div>
+        </div>
+        <div class="cat-item">
+          <div><span class="ci-title">In memoria</span><span class="ci-sub">Single</span></div>
+          <div class="ci-meta">MMXXIV</div>
+        </div>
+        <div class="cat-item">
+          <div><span class="ci-title">L'imperatore</span><span class="ci-sub">Single</span></div>
+          <div class="ci-meta">MMXXIV</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ---------- Passiontide ---------- -->
-<section id="passiontide" class="release-block">
-  <div class="release-grid">
-    <div class="release-cover reveal">
-      <img src="assets/passiontide-cover.jpg" alt="Passiontide album cover" width="640" height="640">
-    </div>
-    <div class="release-copy reveal">
-      <div class="release-eyebrow">New Release · Op. V</div>
-      <h2>Passiontide</h2>
-      <div class="release-meta mono">String Quartet No. 2 · MMXXVI</div>
-      <p class="release-blurb">Four movements through Holy Week, from C♯ minor into the light.</p>
-      <ol class="tracklist">
-        <li>Gethsemane</li>
-        <li>The Vigil</li>
-        <li>The Stone Rolled Away</li>
-        <li>He is Risen</li>
-      </ol>
-      <div class="release-actions">
-        <a class="btn-solid" href="https://open.spotify.com/album/7vk7savyRSCCtE2A2OIK4Q" target="_blank" rel="noopener">Listen on Spotify →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ---------- Ricordi (ivory alt) ---------- -->
-<section id="ricordi" class="release-block alt">
-  <div class="release-grid reverse">
-    <div class="release-copy reveal">
-      <div class="release-eyebrow">Album · Solo Piano</div>
-      <h2>Ricordi</h2>
-      <div class="release-meta mono">Seven Pieces · MMXXVI</div>
-      <p class="release-blurb">Memory in seven movements. Childhood, an old house, a letter never sent, a grandmother's piano, and what stays behind.</p>
-      <ol class="tracklist">
-        <li>Ricordi</li>
-        <li>L'Infanzia</li>
-        <li>La Casa Vecchia</li>
-        <li>Lettera Mai Spedita</li>
-        <li>Il Pianoforte di Nonna</li>
-        <li>Quello Che Resta</li>
-        <li>Addio, Dolce</li>
-      </ol>
-      <div class="release-actions">
-        <a class="btn-solid" href="https://open.spotify.com/album/3i5WGzVxEV7iNmnPtWLtPu" target="_blank" rel="noopener">Listen on Spotify →</a>
-        <a class="btn-line" href="https://distrokid.com/hyperfollow/andrewtrotter/ricordi/" target="_blank" rel="noopener">All Platforms →</a>
-      </div>
-    </div>
-    <div class="release-cover reveal">
-      <img src="assets/ricordi-cover.jpg" alt="Ricordi album cover" width="640" height="640">
-    </div>
-  </div>
-</section>
-
-<!-- ---------- Catalog ---------- -->
-<section id="catalog" class="catalog-block">
-  <div class="catalog-inner">
-    <div class="catalog-header reveal">
-      <div>
-        <div class="section-eyebrow">The Catalog</div>
-        <h2>Works across<br>four worlds.</h2>
-      </div>
-      <p>The catalog, grouped by instrumentation. Orchestral, chamber, and solo piano writing from the past four years.</p>
-    </div>
-
-    <div class="catalog-grid">
-      <div class="work-group reveal">
-        <div class="work-group-header">
-          <h3>Orchestral</h3>
-          <span class="group-count">02 Works</span>
-        </div>
-        <ul>
-          <li><em>Symphony No. 1 „Messiah"</em><span class="work-op">Op. III</span></li>
-          <li><em>All For My Lord</em><span class="work-op">Sacred</span></li>
-        </ul>
-      </div>
-      <div class="work-group reveal">
-        <div class="work-group-header">
-          <h3>Ballet</h3>
-          <span class="group-count">01 Work</span>
-        </div>
-        <ul>
-          <li><em>The Silver Swan</em><span class="work-op">Op. VI</span></li>
-        </ul>
-      </div>
-      <div class="work-group reveal">
-        <div class="work-group-header">
-          <h3>String Quartet</h3>
-          <span class="group-count">02 Works</span>
-        </div>
-        <ul>
-          <li><em>Passiontide</em> · No. 2<span class="work-op">2026</span></li>
-          <li><em>Quartet No. 3</em><span class="work-op">Op. VII</span></li>
-        </ul>
-      </div>
-      <div class="work-group reveal">
-        <div class="work-group-header">
-          <h3>Solo Piano</h3>
-          <span class="group-count">In Progress</span>
-        </div>
-        <ul>
-          <li><em>Ricordi</em> · Album<span class="work-op">2026</span></li>
-          <li><em>Piano, Vol. 1</em><span class="work-op">Collection</span></li>
-          <li><em>Vision Fugitives</em> · 24 Pieces<span class="work-op">Op. VIII</span></li>
-          <li><em>Lullaby</em><span class="work-op">Short</span></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ---------- Sheet Music feature ---------- -->
-<section class="sheets-block">
+<!-- ─── SHEET MUSIC FEATURE ─────────── -->
+<section class="sheets-feature">
   <div class="sheets-inner">
-    <div class="sheets-copy reveal">
-      <div class="section-eyebrow">Scores</div>
-      <h2>Sheet music,<br>engraved in the<br>urtext tradition.</h2>
-      <p>Downloadable PDF editions of selected works. Henle-style typography, performance notes, and the composer's catalogue, free to study and perform.</p>
-      <a class="sheets-cta" href="sheet-music.html">Browse Scores <span class="arrow">→</span></a>
+    <div class="reveal">
+      <div class="label">Scores</div>
+      <h2>Urtext <em>editions,</em> for study and performance.</h2>
+      <p>Full scores in a Henle-style edition. Downloadable, free to study, free to perform. The collection grows as each work is engraved.</p>
+      <a class="sheets-cta" href="sheet-music.html">Browse the Scores <span class="arr">&rarr;</span></a>
     </div>
-    <div class="sheets-preview reveal" aria-hidden="true">
-      <div class="corner-fold"></div>
-      <div class="sheets-preview-head">
-        <div class="sheets-op">Op. VII · MMXXVI · Urtext</div>
-        <div class="sheets-title">String Quartet No. 3<br><span style="font-size: 14px; letter-spacing: 0.15em; text-transform: uppercase; display: block; margin-top: 6px; font-style: normal; font-family: 'JetBrains Mono', monospace;">Andrew Trotter</span></div>
-      </div>
-      <div class="sheets-preview-staff">
-        <div class="staff-group">
-          <div class="staff-line"></div>
-          <div class="staff-line"></div>
-          <div class="staff-line"></div>
-          <div class="staff-line"></div>
-          <div class="staff-line"></div>
-        </div>
-        <div class="staff-group">
-          <div class="staff-line"></div>
-          <div class="staff-line"></div>
-          <div class="staff-line"></div>
-          <div class="staff-line"></div>
-          <div class="staff-line"></div>
-        </div>
-        <div class="staff-group">
-          <div class="staff-line"></div>
-          <div class="staff-line"></div>
-          <div class="staff-line"></div>
-          <div class="staff-line"></div>
-          <div class="staff-line"></div>
-        </div>
-        <div class="staff-group">
-          <div class="staff-line"></div>
-          <div class="staff-line"></div>
-          <div class="staff-line"></div>
-          <div class="staff-line"></div>
-          <div class="staff-line"></div>
-        </div>
+    <div class="sheets-mock reveal-fade" aria-hidden="true">
+      <div class="page">
+        <div class="fold"></div>
+        <div class="op">Op. VII &middot; MMXXVI</div>
+        <div class="ttl">String Quartet<br>No. 3</div>
+        <div class="by">Andrew Trotter</div>
+        <div class="staff"><div></div><div></div><div></div><div></div><div></div></div>
+        <div class="staff"><div></div><div></div><div></div><div></div><div></div></div>
+        <div class="staff"><div></div><div></div><div></div><div></div><div></div></div>
+        <div class="staff"><div></div><div></div><div></div><div></div><div></div></div>
+        <div class="staff"><div></div><div></div><div></div><div></div><div></div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ---------- Listen ---------- -->
-<section id="listen" class="listen-block">
-  <div class="listen-inner reveal">
-    <div class="section-eyebrow">Now Streaming</div>
-    <h2>Selected works on Spotify</h2>
-    <p>Orchestral, string quartet, and solo piano. Released independently.</p>
-    <div class="spotify-embed">
-      <iframe style="border-radius:8px" src="https://open.spotify.com/embed/artist/5zcxTBwJOd6wxoGI0RozUN?utm_source=generator&amp;theme=0" width="100%" height="352" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-    </div>
-  </div>
-</section>
-
-<!-- ---------- Section break quote ---------- -->
-<aside class="section-break">
-  <blockquote class="reveal">
-    The page waits, and the music is what arrives next.
-    <cite>From the desk</cite>
-  </blockquote>
-</aside>
-
-<!-- ---------- About ---------- -->
-<section id="about">
+<!-- ─── ABOUT ───────────────────────── -->
+<section id="about" class="about">
   <div class="about-inner">
-    <div class="about-grid">
-      <div class="about-image reveal" aria-hidden="true"></div>
-      <div class="about-copy reveal">
-        <div class="section-eyebrow">About</div>
-        <h2>A young composer<br>at the desk.</h2>
-        <p>Andrew Trotter is an eighteen-year-old composer and pianist. His catalog spans symphony, ballet, string quartet, sacred collections, and solo piano, with eight opus numbers to date and new work arriving each season.</p>
-        <p>His work has been recognized in regional competitions, including a first-place finish at the Georgia Music Festival and a second place at the Bob Jones University piano competition. He continues to study, perform, and release new work independently.</p>
-        <p>His music sits in the slower-listening tradition, written to be sat with rather than skimmed, drawing on the line that runs from the European masters through the cinematic composers of today.</p>
-        <div class="currently-note">
-          <span class="mono">Currently</span>
-          Freshman at Kennesaw State University. At the desk on <em>Vision Fugitives</em> (Op. VIII, 24 pieces), with String Quartet No. 3 in engraving.
-        </div>
-      </div>
+    <div class="about-side reveal">
+      <span class="big">II.</span>
+      About the<br>Composer
+    </div>
+    <div class="about-text reveal">
+      <p>Andrew Trotter is a composer and pianist writing from Suwanee, Georgia. His work spans symphony, ballet, chamber, and solo piano — <em>a catalog arriving one piece at a time,</em> at the grand in his room, mostly after dark.</p>
+      <p>He writes in the long shadow of the composers he loves — Bach, Chopin, Williams, Shaw — and he writes to be played. Each work has an audience in mind before it has a form.</p>
+      <p>Formally trained from childhood, now in his first year of college study. The catalog continues.</p>
     </div>
   </div>
 </section>
 
-<!-- ---------- Performance ---------- -->
-<section id="performance">
-  <div class="performance-inner">
-    <div class="performance-header reveal">
-      <div>
-        <div class="section-eyebrow">In Performance</div>
-        <h2>At the piano.</h2>
-      </div>
-      <p>Sacred services, private events, and recital collaborations. Available for piano performance and accompaniment work in the Atlanta area and beyond.</p>
-    </div>
-    <div class="doors reveal">
-      <div class="door">
-        <div class="door-num">01</div>
-        <h3>Sacred Services</h3>
-        <p>Hymn accompaniment, prelude and offertory, chamber settings for liturgy. Available for ongoing or one-off services.</p>
-      </div>
-      <div class="door">
-        <div class="door-num">02</div>
-        <h3>Private Events</h3>
-        <p>Weddings, receptions, dinners, and gatherings. Classical, sacred, and quiet contemporary repertoire.</p>
-      </div>
-      <div class="door">
-        <div class="door-num">03</div>
-        <h3>Recitals &amp; Collaborations</h3>
-        <p>Solo recitals, concerto performances, and chamber collaborations with vocalists and instrumentalists.</p>
-      </div>
+<!-- ─── BEYOND ──────────────────────── -->
+<section class="beyond">
+  <div class="beyond-inner">
+    <div class="beyond-head reveal">Beyond the Page</div>
+    <div class="beyond-row">
+      <article class="beyond-card reveal" id="performance">
+        <div class="bc-mark">P.</div>
+        <h3>Performance</h3>
+        <p>Available for solo piano recitals, chamber collaborations, and performances of the catalog. Classical and new work.</p>
+        <a class="bc-link" href="#contact">Inquire &rarr;</a>
+      </article>
+      <article class="beyond-card reveal" id="studio">
+        <div class="bc-mark">S.</div>
+        <h3>Studio</h3>
+        <p>The ear-training channel — short modal and interval quizzes, theory explainers, and composer films in progress.</p>
+        <a class="bc-link" href="https://www.youtube.com/@andrewtrottermusic" target="_blank" rel="noopener">To the channel &rarr;</a>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- ---------- Studio ---------- -->
-<section id="studio">
-  <div class="studio-inner">
-    <div class="studio-intro reveal">
-      <div class="section-eyebrow">Studio</div>
-      <h2>For students.</h2>
-      <p>Teaching pamphlets on piano fundamentals, technique, and the daily regimen. Free to download, use, and share.</p>
-    </div>
-    <div class="pamphlet-grid reveal">
-      <div class="pamphlet-card">
-        <div class="pamphlet-label">Teaching Pamphlet · 01</div>
-        <h3>Piano Technique<br>&amp; Chord Studies</h3>
-        <div class="pamphlet-meta">PDF · 6 Pages</div>
-        <a class="pamphlet-download" href="assets/piano-technique-pamphlet.pdf" target="_blank" rel="noopener" download="">Download →</a>
-      </div>
-      <div class="pamphlet-card">
-        <div class="pamphlet-label">Teaching Pamphlet · 02</div>
-        <h3>Adele Marcus<br>Technical Regimen</h3>
-        <div class="pamphlet-meta">PDF · 2 Pages</div>
-        <a class="pamphlet-download" href="assets/marcus-technical-regimen.pdf" target="_blank" rel="noopener" download="">Download →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ---------- Manuscript strip ---------- -->
-<aside class="manuscript-strip" aria-label="Manuscript gallery">
-  <div class="manuscript-grid">
-    <div class="ms-1" role="img" aria-label="Manuscript in progress"></div>
-    <div class="ms-2" role="img" aria-label="Notation detail"></div>
-    <div class="ms-3" role="img" aria-label="Hands at the piano"></div>
-    <div class="ms-4" role="img" aria-label="Pages on the desk"></div>
-  </div>
-</aside>
-
-<!-- ---------- Contact ---------- -->
-<section id="contact">
+<!-- ─── CONTACT ─────────────────────── -->
+<section id="contact" class="contact">
+  <div class="contact-mark">&amp;</div>
   <div class="contact-inner">
-    <div class="contact-head reveal">
-      <div class="section-eyebrow">Get in Touch</div>
-      <h2>Contact.</h2>
-      <p>Sync licensing, performance booking, and collaborations. For press inquiries and press-kit material, see the press page.</p>
+    <div class="reveal">
+      <div class="label">Correspondence</div>
+      <h2>Write <em>me.</em></h2>
+      <a class="contact-email" href="mailto:actrotter0709@gmail.com">actrotter0709@gmail.com</a>
+      <p class="contact-aside">For performance inquiries, score requests, collaboration, or anything else. Replies land as soon as the piano lets me.</p>
     </div>
-
-    <div class="contact-doors reveal">
-      <div class="door">
-        <div class="door-num">01</div>
-        <h3>Sync &amp; Licensing</h3>
-        <p>Film, television, advertising, and trailer placements. Catalog available for licensing across orchestral, string quartet, and solo piano material.</p>
-      </div>
-      <div class="door">
-        <div class="door-num">02</div>
-        <h3>Performance Booking</h3>
-        <p>Sacred services, private events, recitals, and collaborations. Travel welcome.</p>
-      </div>
-    </div>
-
-    <div class="contact-info reveal">
-      <div><a href="mailto:actrotter0709@gmail.com">actrotter0709@gmail.com</a></div>
-      <div>404 · 416 · 6512</div>
-    </div>
-
-    <form class="contact-form reveal" id="contact-form">
-      <h3>Send a note.</h3>
-      <label for="name">Name</label>
-      <input type="text" id="name" name="from_name" required="" style="">
-
-      <label for="email">Email</label>
-      <input type="email" id="email" name="reply_to" required="" style="">
-
-      <label for="subject">Subject</label>
-      <input type="text" id="subject" name="subject" required="" style="">
-
-      <label for="message">Message</label>
-      <textarea id="message" name="message" required="" style=""></textarea>
-
-      <button type="submit">Send Message →</button>
-      <div class="form-status" id="form-status"></div>
-    </form>
   </div>
 </section>
 
+<!-- ─── FOOTER ──────────────────────── -->
 <footer>
-  <div class="footer-inner">
-    <div class="footer-brand">Andrew Trotter</div>
-    <div class="footer-tag">Composer · Pianist · Suwanee, Georgia</div>
-    <div class="footer-links">
-      <a href="#top">Top</a>
-      <a href="#catalog">Catalog</a>
-      <a href="sheet-music.html">Sheet Music</a>
-      <a href="press.html">Press</a>
-      <a href="https://open.spotify.com/artist/5zcxTBwJOd6wxoGI0RozUN" target="_blank" rel="noopener">Spotify</a>
-      <a href="https://www.youtube.com/@andrewtrotter" target="_blank" rel="noopener">YouTube</a>
-      <a href="https://www.instagram.com/andrewtrottermusic/" target="_blank" rel="noopener">Instagram</a>
-    </div>
-    <div class="copy">© MMXXVI Andrew Trotter. All works © the composer.</div>
+  <div class="footer-brand">Andrew Trotter</div>
+  <div class="footer-tag">Composer &middot; Pianist &middot; Suwanee, Georgia</div>
+  <div class="footer-links">
+    <a href="#opus">Opus</a>
+    <a href="#catalog">Catalog</a>
+    <a href="sheet-music.html">Scores</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
   </div>
+  <div class="copy">&copy; MMXXVI Andrew Trotter. All works &copy; the composer.</div>
 </footer>
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script type="text/javascript">
-  // EmailJS form
-  (function(){
-    emailjs.init({ publicKey: "BKLWRKeMIMg5WgcLR" });
-  })();
-
-  document.getElementById('contact-form').addEventListener('submit', function(e){
-    e.preventDefault();
-    var status = document.getElementById('form-status');
-    status.textContent = 'Sending…';
-    emailjs.sendForm('service_h3jsxfu', 'template_sw7t1uc', this)
-      .then(function(){
-        status.textContent = 'Thank you — message sent.';
-        document.getElementById('contact-form').reset();
-      }, function(error){
-        status.textContent = 'Something went wrong. Please email directly: actrotter0709@gmail.com';
-      });
-  });
-
-  // Nav shrink on scroll
   var nav = document.getElementById('nav');
   window.addEventListener('scroll', function(){
     if (window.scrollY > 20) { nav.classList.add('scrolled'); }
     else { nav.classList.remove('scrolled'); }
   });
 
-  // Scroll reveals via IntersectionObserver
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function(entries){
       entries.forEach(function(entry){
@@ -1801,13 +1041,12 @@
           io.unobserve(entry.target);
         }
       });
-    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
-    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.06 });
+    document.querySelectorAll('.reveal, .reveal-fade').forEach(function(el){ io.observe(el); });
   } else {
-    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+    document.querySelectorAll('.reveal, .reveal-fade').forEach(function(el){ el.classList.add('in'); });
   }
 </script>
 
-
-
-</body></html>
+</body>
+</html>
