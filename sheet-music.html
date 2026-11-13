@@ -333,6 +333,16 @@
     max-width: 580px; margin: 0 auto; position: relative;
     font-variation-settings: "opsz" 24, "SOFT" 50;
   }
+  .future-note p a { color: var(--cream); border-bottom: 1px solid rgba(242, 237, 226, 0.35); }
+  .future-note p a:hover { color: var(--ochre); border-color: var(--ochre); }
+  .future-note .fn-cta {
+    display: inline-flex; align-items: center; gap: 14px; min-height: 48px;
+    margin-top: 32px; padding: 16px 30px; position: relative;
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--cream); border: 1px solid rgba(242, 237, 226, 0.6);
+  }
+  .future-note .fn-cta:hover { border-color: var(--ochre); color: var(--ochre); }
 
   footer {
     background: #06060A; color: rgba(242, 237, 226, 0.6);
@@ -372,6 +382,13 @@
     .future-note { padding: 40px 24px; }
     .scores-mark { font-size: 180px; top: 20px; }
   }
+
+  @media (max-width: 560px) {
+    .nav-wrap { flex-direction: column; gap: 10px; }
+    .nav-links { flex-wrap: wrap; justify-content: center; gap: 8px 16px; }
+    .page-head { padding-top: 170px; }
+    .breadcrumb { top: 115px; }
+  }
 </style>
 </head>
 <body>
@@ -383,6 +400,7 @@
       <li><a href="index.html#opus">Opus</a></li>
       <li><a href="index.html#catalog">Catalog</a></li>
       <li><a href="sheet-music.html" class="active">Scores</a></li>
+      <li><a href="index.html#lessons">Lessons</a></li>
       <li><a href="index.html#about">About</a></li>
       <li><a href="index.html#contact">Contact</a></li>
     </ul>
@@ -471,7 +489,8 @@
     <div class="future-note reveal">
       <span class="mono">Growing Collection</span>
       <h3>More scores, <em>in time.</em></h3>
-      <p>New editions post as each work is engraved. Write with any requests.</p>
+      <p>New editions post as each work is engraved. Write with any requests, or <a href="index.html#commissions">commission a piece</a> of your own.</p>
+      <a class="fn-cta" href="index.html#lessons">Lessons &amp; Commissions &rarr;</a>
     </div>
   </div>
 </section>
@@ -484,6 +503,7 @@
     <a href="index.html#opus">Opus</a>
     <a href="index.html#catalog">Catalog</a>
     <a href="sheet-music.html">Scores</a>
+    <a href="index.html#lessons">Lessons &amp; Commissions</a>
     <a href="index.html#contact">Contact</a>
   </div>
   <div class="copy">&copy; MMXXVI Andrew Trotter. All works &copy; the composer.</div>
