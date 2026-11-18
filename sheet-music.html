@@ -441,10 +441,50 @@
     <div class="scores-count-row reveal">
       <div class="label">The Editions</div>
       <h2>Available scores,<br>as they're engraved.</h2>
-      <div class="note">01 Available &middot; More in Engraving</div>
+      <div class="note">02 Available &middot; More in Engraving</div>
     </div>
 
     <div class="scores-stream">
+      <article class="score-card reveal" id="op9">
+        <div class="score-preview" aria-hidden="true">
+          <div class="ps-fold"></div>
+          <div class="ps-op">Op. IX &middot; MMXXVI</div>
+          <div class="ps-ttl">String Quartet<br>No. 4</div>
+          <div class="ps-by">Andrew Trotter</div>
+          <div class="ps-staff"><div></div><div></div><div></div><div></div><div></div></div>
+          <div class="ps-staff"><div></div><div></div><div></div><div></div><div></div></div>
+          <div class="ps-staff"><div></div><div></div><div></div><div></div><div></div></div>
+          <div class="ps-staff"><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+
+        <div class="score-info">
+          <div>
+            <div class="opus-mark">Opus IX &middot; MMXXVI</div>
+            <h3>String Quartet<br>No. 4</h3>
+
+            <div class="score-metadata">
+              <div class="meta-cell"><span class="meta-label">Scoring</span><span class="meta-value">2 Vn, Va, Vc</span></div>
+              <div class="meta-cell"><span class="meta-label">Movements</span><span class="meta-value">IV</span></div>
+              <div class="meta-cell"><span class="meta-label">Published</span><span class="meta-value">Nov. 2026</span></div>
+              <div class="meta-cell"><span class="meta-label">Edition</span><span class="meta-value">Score &amp; Parts</span></div>
+            </div>
+
+            <p class="score-blurb">Four movements for standard string quartet, with sul ponticello colour, pizzicato and arco exchanges, and close contrapuntal writing between Violin II and Viola. Published by Trotter Publishing, with preface and performance notes.</p>
+
+            <ol class="movement-list">
+              <li>First movement<span class="tempo">&#9833; = 120</span></li>
+              <li>Second movement<span class="tempo">&#9833; = 90</span></li>
+              <li>Third movement<span class="tempo">&#9833; = 90 &middot; 76</span></li>
+              <li>Fourth movement<span class="tempo">&#9833; = 90</span></li>
+            </ol>
+          </div>
+
+          <div class="score-actions">
+            <a href="assets/scores/String_Quartet_No4_Op9.pdf" class="btn-solid" download>Download Full Score <span class="arrow">&rarr;</span></a>
+          </div>
+        </div>
+      </article>
+
       <article class="score-card reveal" id="op7">
         <div class="score-preview" aria-hidden="true">
           <div class="ps-fold"></div>
@@ -525,7 +565,7 @@
         }
       });
     }, { rootMargin: '0px 0px -8% 0px', threshold: 0.06 });
-    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); io.observe(el); });
   } else {
     document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
   }
